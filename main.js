@@ -792,6 +792,7 @@
     var sk = $("#skillsList");
     if (sk && D.skills) D.skills.forEach(function (s) { sk.appendChild(el("li", null, s)); });
     var c = D.contact || {};
+    if (c.emailParts) { var rv = function (x) { return x.split("").reverse().join(""); }; c.email = rv(c.emailParts[1]) + String.fromCharCode(64) + rv(c.emailParts[0]); }
     ["#emailLink", "#emailLink2"].forEach(function (s) { var a = $(s); if (a && c.email) { a.href = "mailto:" + c.email; a.textContent = c.email; } });
     ["#linkedinLink", "#linkedinLink2"].forEach(function (s) { var a = $(s); if (a && c.linkedin) { a.href = c.linkedin; a.target = "_blank"; } });
   })();

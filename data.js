@@ -12,7 +12,8 @@
 
 window.SITE_DATA = {
   contact: {
-    email: "rogavanikolozi@gmail.com",
+    /* Email, stored backwards in two parts so spam bots can't read it. main.js puts it back together. */
+    emailParts: ["moc.liamg", "izolokinavagor"],
     linkedin: "https://www.linkedin.com/in/nikoloz-rogava-43b50126a/",
   },
 
