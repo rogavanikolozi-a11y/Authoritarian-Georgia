@@ -456,8 +456,6 @@ window.SITE_DATA = {
       city: "Tbilisi", lon: 44.79, lat: 41.72, hub: true,
       roles: [
         "Political Analyst, TV Formula, “Droeba”",
-        "Trainer, Konrad-Adenauer-Stiftung",
-        "Assistant Researcher, Georgian Institute of Politics",
         "Intern/Researcher, Georgian Parliamentary Research Center",
         "Intern, Ministry of Economy and Sustainable Development",
         "BA Political Science, Tbilisi State University",
@@ -467,8 +465,6 @@ window.SITE_DATA = {
     { city: "Tallinn", lon: 24.75, lat: 59.44, roles: ["Intern, Konrad-Adenauer-Stiftung Baltic Office"], side: "left" },
     { city: "Vilnius", lon: 25.28, lat: 54.69, roles: ["Research Assistant, Visionary Analytics"], side: "left" },
     { city: "Bologna", lon: 11.34, lat: 44.49, roles: ["Erasmus+ semester, University of Bologna"], side: "left" },
-    { city: "Budapest", lon: 19.04, lat: 47.5, roles: ["New Intellectuals Conference, NICON 2024"], side: "left" },
-    { city: "Baku", lon: 49.87, lat: 40.41, roles: ["Erasmus+ training course"], side: "right" },
   ],
 
   /* ---------- About: experience and education ---------- */
@@ -479,9 +475,6 @@ window.SITE_DATA = {
     { when: "2025", what: "Research Assistant", where: "Visionary Analytics (Vilnius), Innovation, Research and Development" },
     { when: "2025", what: "Intern", where: "Konrad-Adenauer-Stiftung Baltic Office (Tallinn)" },
     { when: "2024", what: "Intern/Researcher", where: "Georgian Parliamentary Research Center (USAID National Governance Program)" },
-    { when: "2024", what: "Youth Leader", where: "Economic Policy Research Center (EU grant)" },
-    { when: "2023 to 2024", what: "Trainer", where: "Konrad-Adenauer-Stiftung, EU education in schools across Georgia" },
-    { when: "2023", what: "Assistant Researcher", where: "Georgian Institute of Politics" },
     { when: "2023", what: "Intern", where: "Ministry of Economy and Sustainable Development, Economic Analysis and Reforms Department" },
     { when: "2021", what: "Intern", where: "Civil Service Bureau, Analytical Department" },
     { when: "2020 to 2024", what: "BA Political Science", where: "Tbilisi State University (scholarship). Thesis on public skepticism toward the funded pension system in Georgia" },
