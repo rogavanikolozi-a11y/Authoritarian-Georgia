@@ -78,17 +78,6 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .hero__pole .pole__end--w { color: var(--s-ink); }
 @media (prefers-reduced-motion: reduce) { .bar__pole .pole__mark, .hero__pole .pole__mark { transition: none; } }
 
-/* hero line: Brussels = black block, Moscow = the red disc (the "gravity centre") */
-.hero__pole { margin-top: clamp(40px, 7vh, 80px); }
-.hero__pole .pole { gap: 0; align-items: center; }
-.hero__pole .pole__end--w { background: var(--s-ink); color: var(--s-bg); padding: 12px 14px; font-size: clamp(11px, 1vw, 14px); }
-.hero__pole .pole__end--e {
-  display: grid; place-items: center; width: clamp(120px, 17vw, 260px); aspect-ratio: 1; border-radius: 50%;
-  background: var(--s-red); color: #fff !important; font-size: clamp(12px, 1.2vw, 16px); margin-left: -2px;
-}
-.hero__pole .pole__track::before { height: 6px; margin-top: -3px; }
-@media (max-width: 760px) { .hero__pole .pole__end--e { width: 104px; } .hero__pole .pole__end--w { padding: 9px 10px; } }
-
 /* ---------- 5. Contents sidebar ---------- */
 .dots__head { padding-bottom: 12px; margin-bottom: 6px; border-bottom: 4px solid var(--s-ink); }
 .dots a { border-left: 0; padding: 8px 0; color: var(--s-ink); opacity: .55; }
@@ -131,6 +120,11 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
   .theme, .bar__lang { padding: 5px 7px; font-size: 11px; }
   .bar__pole .pole__end { font-size: 9px; }
 }
+
+/* the red disc (content to be decided) */
+.sw-disc { position: absolute; z-index: 0; right: -16vw; top: 6vh; width: min(40vw, 580px); aspect-ratio: 1; border-radius: 50%; background: var(--s-red); pointer-events: none; }
+@media (max-width: 1100px) { .sw-disc { width: 34vw; right: -12vw; top: 7vh; } }
+@media (max-width: 760px) { .sw-disc { display: none; } }
 
 /* Georgian page: BPG Typewriter has one weight, keep it thickened */
 /* no fake bold (it makes Georgian letters collide); thicken with a fine outline instead */
