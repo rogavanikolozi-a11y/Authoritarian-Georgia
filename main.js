@@ -8,6 +8,8 @@
   "use strict";
 
   var D = window.SITE_DATA || {};
+  /* Optional translations: a page can set D.ui = { "English text": "translation" }. {0}, {1} are filled in. */
+  function T(s) { var a = arguments, t = (D.ui && D.ui[s]) || s; return t.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1]; }); }
   var root = document.documentElement;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var isDesktop = function () { return window.matchMedia("(min-width: 980px)").matches; };
@@ -64,16 +66,16 @@
     p.innerHTML =
       '<span class="pole__end pole__end--w">Brussels</span>' +
       '<span class="pole__track">' +
-      '<span class="pole__formal"><i></i><b>official line</b></span>' +
-      '<span class="pole__mark"><i></i><b>actual course</b></span>' +
+      '<span class="pole__formal"><i></i><b>' + T("official line") + '</b></span>' +
+      '<span class="pole__mark"><i></i><b>' + T("actual course") + '</b></span>' +
       "</span>" +
       '<span class="pole__end pole__end--e">Moscow</span>';
     return p;
   }
   function poleLabel(disc, formal) {
     var pct = Math.round(disc * 100);
-    var s = "Illustrative needle. Actual course sits about " + pct + " percent of the way from Brussels to Moscow.";
-    s += formal == null ? " The official pro-EU line has been dropped." : " The official line stays close to Brussels.";
+    var s = T("Illustrative needle. Actual course sits about {0} percent of the way from Brussels to Moscow.", pct);
+    s += " " + (formal == null ? T("The official pro-EU line has been dropped.") : T("The official line stays close to Brussels."));
     return s;
   }
 
@@ -237,12 +239,12 @@
 
     function setCount(out, gone) {
       var total = N - (gone ? 1 : 0);
-      count.textContent = "Backing the regime in public: " + (total - out) + " of " + total;
+      count.textContent = T("Backing the regime in public: {0} of {1}", total - out, total);
     }
     function reset() {
       timers.forEach(clearTimeout); timers = [];
       people.forEach(function (g) { g.setAttribute("class", "pp"); });
-      status.textContent = "Everyone backs the regime in public. Most do not mean it.";
+      status.textContent = T("Everyone backs the regime in public. Most do not mean it.");
       setCount(0, false);
     }
     function order() {
@@ -254,7 +256,7 @@
     function cascade() {
       reset();
       var seq = order(), out = 0;
-      status.textContent = "One person says it out loud.";
+      status.textContent = T("One person says it out loud.");
       people[SPARK].classList.add("is-spark", "is-out"); out = 1; setCount(out, false);
       if (reduce) {
         seq.forEach(function (i) { people[i].classList.add("is-out"); });
@@ -264,20 +266,20 @@
       seq.forEach(function (i, k) {
         timers.push(setTimeout(function () {
           people[i].classList.add("is-out"); out += 1; setCount(out, false);
-          if (k === 2) status.textContent = "Each act of defiance makes the next one easier.";
+          if (k === 2) status.textContent = T("Each act of defiance makes the next one easier.");
           if (k === seq.length - 1) done();
         }, t));
         gap = Math.max(70, gap * 0.8); t += gap;
       });
       function done() {
-        status.textContent = "The appearance of support is gone. " + LOYAL.length + " loyalists remain out of " + N + ".";
+        status.textContent = T("The appearance of support is gone. {0} loyalists remain out of {1}.", LOYAL.length, N);
       }
     }
     function learn() {
       reset();
       people[SPARK].classList.add("is-gone");
       setCount(0, true);
-      status.textContent = "The first person is removed before anyone sees. Nothing spreads, and " + (N - 1 - LOYAL.length) + " people go on hiding what they think.";
+      status.textContent = T("The first person is removed before anyone sees. Nothing spreads, and {0} people go on hiding what they think.", N - 1 - LOYAL.length);
     }
 
     $("#bankPlay").addEventListener("click", cascade);
@@ -389,7 +391,7 @@
     // overlay: cities and labels keep their size while the map zooms
     var marks = [];
     function addLabel(text, lonlat, cls, dx, dy, anchor, only) {
-      var t = over.append("text").attr("class", "mlabel " + (cls || "")).attr("text-anchor", anchor || "middle").text(text);
+      var t = over.append("text").attr("class", "mlabel " + (cls || "")).attr("text-anchor", anchor || "middle").text(T(text));
       marks.push({ n: t, p: proj(lonlat), dx: dx || 0, dy: dy || 0, only: only, text: true });
     }
     function addCity(lonlat, cls, shape, only) {
@@ -481,7 +483,7 @@
       if (s) s.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: isDesktop() ? "center" : "start" });
     }
     function render() {
-      if (!hasD3) { mapNode.textContent = "The map could not be loaded. The country notes below contain the same information."; return; }
+      if (!hasD3) { mapNode.textContent = T("The map could not be loaded. The country notes below contain the same information."); return; }
       map = drawEurope(mapNode, { base: base, ratio: isDesktop() ? 0.86 : 0.8, onPick: pick });
       map.focus(isDesktop() ? active : "overview", isDesktop() ? byId(active).focus : base, false);
       $$("[data-mini]", host).forEach(function (n) {
@@ -506,7 +508,7 @@
   (function matrix() {
     var host = $("#matrix"), note = $("#matrixNote"), textHost = $("#matrixText");
     if (!host || !D.matrix) return;
-    var M = D.matrix, WORD = ["not documented in the thesis", "foundations only", "documented"];
+    var M = D.matrix, WORD = [T("not documented in the thesis"), T("foundations only"), T("documented")];
     var table = el("table", "mx"), thead = el("thead"), tr = el("tr");
     var corner = el("th"); corner.innerHTML = '<span class="sr">Narrative</span>'; tr.appendChild(corner);
     M.cols.forEach(function (c) {
@@ -554,14 +556,14 @@
       var bars = el("div", "meter__bars");
       for (var i = 1; i <= 4; i++) bars.appendChild(el("i", i <= n ? "on" : ""));
       var lab = el("div", "meter__lab");
-      lab.appendChild(el("span", null, "Intensity of the language"));
+      lab.appendChild(el("span", null, T("Intensity of the language")));
       lab.appendChild(el("b", null, label));
       m.appendChild(bars); m.appendChild(lab);
       return m;
     }
     function facts(cp) {
       var dl = el("dl", "cp-facts");
-      [["Dominant frame", cp.frame], ["Cast as the enemy", cp.enemy]].forEach(function (f) {
+      [[T("Dominant frame"), cp.frame], [T("Cast as the enemy"), cp.enemy]].forEach(function (f) {
         var d = el("div"); d.appendChild(el("dt", null, f[0])); d.appendChild(el("dd", null, f[1])); dl.appendChild(d);
       });
       return dl;
@@ -576,7 +578,7 @@
 
     function show(i) {
       var cp = C[i];
-      pCount.textContent = "Checkpoint " + (i + 1) + " of " + C.length;
+      pCount.textContent = T("Checkpoint {0} of {1}", i + 1, C.length);
       pDate.textContent = cp.date; pTitle.textContent = cp.title;
       setPole(pPole, cp.disc, cp.formal);
       if (!pMeter.firstChild) pMeter.appendChild(meter(cp.intensity, cp.intensityLabel));
@@ -629,7 +631,7 @@
         var tr = el("tr"), th = el("th", null, r.dim); th.scope = "row"; tr.appendChild(th);
         r.cells.forEach(function (c, j) {
           var td = el("td", null, c.t); td.setAttribute("data-col", L.cols[j]);
-          if (c.interp) { td.appendChild(document.createTextNode(" ")); td.appendChild(el("span", "reading", "reading")); }
+          if (c.interp) { td.appendChild(document.createTextNode(" ")); td.appendChild(el("span", "reading", T("reading"))); }
           tr.appendChild(td);
         });
         tb.appendChild(tr);
@@ -650,7 +652,7 @@
     if (!host || !D.experts) return;
     D.experts.forEach(function (x) {
       var d = el("details", "card"), s = el("summary");
-      s.appendChild(el("p", "card__date", "Interview, " + x.date));
+      s.appendChild(el("p", "card__date", T("Interview, {0}", x.date)));
       s.appendChild(el("h3", "card__name", x.name));
       s.appendChild(el("p", "card__aff", x.aff));
       s.appendChild(el("p", "card__exp", x.exp));
@@ -686,7 +688,7 @@
     var node = $("#mapGeorgia");
     if (!node) return;
     function render() {
-      if (!hasD3 || !window.GEO_GEORGIA) { node.textContent = "The map could not be loaded."; return; }
+      if (!hasD3 || !window.GEO_GEORGIA) { node.textContent = T("The map could not be loaded."); return; }
       var W = node.clientWidth || 700, small = W < 560, H = Math.round(W * (small ? 0.74 : 0.5));
       var ge = topojson.feature(window.GEO_GEORGIA, window.GEO_GEORGIA.objects.georgia);
       var occ = topojson.feature(window.GEO_GEORGIA, window.GEO_GEORGIA.objects.occupied).features;
@@ -704,7 +706,7 @@
 
       function label(lines, at, cls, anchor) {
         var t = svg.append("text").attr("class", "mlabel " + (cls || "")).attr("text-anchor", anchor || "middle").attr("x", at[0]).attr("y", at[1]);
-        lines.forEach(function (l, i) { t.append("tspan").attr("x", at[0]).attr("dy", i ? "1.25em" : 0).text(l); });
+        lines.forEach(function (l, i) { t.append("tspan").attr("x", at[0]).attr("dy", i ? "1.25em" : 0).text(T(l)); });
       }
       // neighbours and sea
       label(["Russia"], proj(small ? [46.5, 42.95] : [42.3, 43.72]));
