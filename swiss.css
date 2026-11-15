@@ -95,7 +95,7 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .hero__meta span + span::before { content: "/"; color: var(--s-red); margin: 0 .8em; }
 .hero__titleblock { margin-top: clamp(28px, 6vh, 72px); }
 .hero__title {
-  font: 800 clamp(46px, 9.4vw, 150px)/.92 var(--s-font) !important; letter-spacing: -.025em !important;
+  font: 800 clamp(44px, 7.4vw, 118px)/.92 var(--s-font) !important; letter-spacing: -.025em !important;
   max-width: 11ch; text-wrap: balance;
 }
 .hero__title em { font-style: normal; font-weight: 400; color: var(--s-ink); }
@@ -121,10 +121,20 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
   .bar__pole .pole__end { font-size: 9px; }
 }
 
-/* the red disc (content to be decided) */
-.sw-disc { position: absolute; z-index: 0; right: -16vw; top: 6vh; width: min(40vw, 580px); aspect-ratio: 1; border-radius: 50%; background: var(--s-red); pointer-events: none; }
-@media (max-width: 1100px) { .sw-disc { width: 34vw; right: -12vw; top: 7vh; } }
-@media (max-width: 760px) { .sw-disc { display: none; } }
+/* hero: red circle with the four faces (one halftone image, clipped to the circle) */
+:root { --s-disc: #E8473F; }
+.sw-disc { position: absolute; z-index: 0; right: 0; top: 30px; width: min(31vw, 450px); aspect-ratio: 1; margin: 0;
+  border-radius: 50%; background: var(--s-disc); overflow: hidden; }
+.sw-collage { display: block; width: 100%; height: 100%; }
+.sw-ring { display: none; }
+/* white bar covering Ivanishvili's eyes (position from tools/collage.py) */
+.sw-bar { position: absolute; left: 64.8%; top: 49.6%; width: 16.2%; height: 4.4%; background: #F5F5F2; }
+@media (max-width: 760px) { .sw-disc { position: relative; right: auto; width: min(88vw, 440px); margin: 28px auto 0; } }
+.hero__titleblock { position: relative; z-index: 1; }
+.sw-credits { margin-top: 14px; font-size: 13px; line-height: 1.5; }
+@media (max-width: 760px) {
+  .sw-disc { position: relative; right: auto; top: auto; width: min(88vw, 440px); margin: 32px auto 0; }
+}
 
 /* Georgian page: BPG Typewriter has one weight, keep it thickened */
 /* no fake bold (it makes Georgian letters collide); thicken with a fine outline instead */
