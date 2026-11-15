@@ -234,8 +234,8 @@ html:lang(ka) { font-synthesis: none; }
 .sw-cp b { font: 800 clamp(72px, 9vw, 150px)/.8 var(--s-font); letter-spacing: -.05em; color: var(--s-red); }
 .sw-cp .label { margin-top: auto; padding-top: 18px; }
 .sw-cp h3 { margin-top: 8px; font: 800 clamp(18px, 1.6vw, 24px)/1.15 var(--s-font); letter-spacing: -.01em; }
-.sw-cp li:last-child { background: var(--s-ink); color: var(--s-bg); border-top-color: var(--s-red); padding: 16px 16px 18px; }
-.sw-cp li:last-child .label { color: var(--s-bg); }
+.sw-cp li:last-child { background: #111; color: #F5F5F2; border-top-color: var(--s-red); padding: 16px 16px 18px; }
+.sw-cp li:last-child .label { color: #F5F5F2; }
 @media (max-width: 860px) { .sw-cp { grid-template-columns: 1fr 1fr; } .sw-cp li { min-height: 180px; } }
 @media (max-width: 480px) { .sw-cp { grid-template-columns: 1fr; } }
 
