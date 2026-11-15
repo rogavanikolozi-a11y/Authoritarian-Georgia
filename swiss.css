@@ -1,0 +1,138 @@
+/* =========================================================================
+   swiss.css: Swiss International Style layer (loaded after styles.css)
+   Rules here restyle text, headings, navigation and new graphic elements.
+   PROTECTED ELEMENTS (maps, charts, diagrams, tables) are isolated in
+   section 0 so they keep their original look. Do not add rules that target
+   them anywhere else in this file.
+   ========================================================================= */
+
+/* ---------- 0. Protected elements: keep their original appearance ---------- */
+/* They read the original tokens from styles.css (--paper, --ink, --serif ...),
+   which are left untouched. Here we only restore what they used to inherit
+   from <body>: background, text colour, font and line-height. */
+#figTimeline, #figTypes, #figBank, #figTri, #figLenses,
+#mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow,
+#expertCards, .finding__fig, #figGeorgia, #corpusBox {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 18px/1.62 var(--sans);
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  --s-bg: #F5F5F2;
+  --s-ink: #111111;
+  --s-red: #E30613;
+  --s-font: "Inter Tight", "BPG Typewriter A", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --s-gap: 24px;
+  --s-rule: 6px;
+  --s-p: .12;                 /* needle position, set by swiss.js while scrolling */
+}
+:root[data-theme="dark"] { --s-bg: #111111; --s-ink: #F5F5F2; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s-bg: #111111; --s-ink: #F5F5F2; } }
+
+/* ---------- 2. Base ---------- */
+body { background: var(--s-bg); color: var(--s-ink); font-family: var(--s-font); }
+::selection { background: var(--s-red); color: #fff; }
+:focus-visible { outline: 3px solid var(--s-red); outline-offset: 3px; }
+a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
+
+/* small uppercase labels */
+.label, .dots__head, .hero__meta, .hero__facts dt, .chapter__head > .label {
+  font: 600 12px/1.3 var(--s-font); letter-spacing: .14em; text-transform: uppercase; color: var(--s-ink);
+}
+
+/* buttons: flat blocks */
+.btn { border: 2px solid var(--s-ink); border-radius: 0; font: 700 13px/1 var(--s-font); letter-spacing: .1em; text-transform: uppercase; padding: 16px 22px; color: var(--s-ink); background: transparent; }
+.btn:hover { background: var(--s-ink); color: var(--s-bg); }
+.btn--solid { background: var(--s-red); border-color: var(--s-red); color: #fff; }
+.btn--solid:hover { background: var(--s-ink); border-color: var(--s-ink); color: var(--s-bg); }
+.btn--quiet { border-color: var(--s-ink); color: var(--s-ink); }
+
+/* ---------- 3. Top bar ---------- */
+.bar { background: var(--s-bg); -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 2px solid var(--s-ink); }
+.bar__progress { height: 4px; bottom: -2px; }
+.bar__progress span { background: var(--s-red); }
+.bar__name { font: 800 15px/1 var(--s-font); letter-spacing: -.01em; text-transform: none; }
+.bar__nav { font: 600 12px/1 var(--s-font); letter-spacing: .12em; }
+.theme, .bar__lang { border: 2px solid var(--s-ink); border-radius: 0; color: var(--s-ink); font-weight: 700; padding: 7px 10px; }
+.theme:hover, .bar__lang:hover { background: var(--s-ink); color: var(--s-bg); border-color: var(--s-ink); }
+.menu__list { border: 2px solid var(--s-ink); box-shadow: none; background: var(--s-bg); }
+.menu__list a { font: 600 16px/1.3 var(--s-font); }
+.menu__list span { font: 700 12px/1.6 var(--s-font); color: var(--s-red); }
+
+/* ---------- 4. Brussels to Moscow line (restyled; moves with scroll) ---------- */
+.bar__pole .pole__end, .hero__pole .pole__end { font: 800 11px/1 var(--s-font); letter-spacing: .14em; color: var(--s-ink); }
+.bar__pole .pole__end--e, .hero__pole .pole__end--e { color: var(--s-red); }
+.bar__pole .pole__track, .hero__pole .pole__track { background: none; }
+.bar__pole .pole__track::before { height: 2px; margin-top: -1px; background: var(--s-ink); }
+.hero__pole .pole__track { height: 40px; }
+.hero__pole .pole__track::before { height: 6px; margin-top: -3px; background: linear-gradient(90deg, var(--s-ink) 0 calc(var(--s-p) * 100%), color-mix(in srgb, var(--s-ink) 25%, transparent) 0); }
+.bar__pole .pole__mark, .hero__pole .pole__mark { left: calc(var(--s-p) * 100%) !important; transition: left .25s linear; }
+.bar__pole .pole__mark i { width: 10px; height: 10px; border-radius: 50%; transform: none; background: var(--s-red); }
+.hero__pole .pole__mark i { width: 28px; height: 28px; border-radius: 50%; transform: none; background: var(--s-red); }
+.hero__pole .pole__mark b { bottom: 36px; font: 800 14px/1 var(--s-font); letter-spacing: .12em; text-transform: uppercase; color: var(--s-red); -webkit-text-stroke: 0; }
+.hero__pole .pole__end--w { color: var(--s-ink); }
+.hero__pole .pole__end, .hero__pole .pole__end--e { font-size: clamp(11px, 1vw, 14px); }
+@media (prefers-reduced-motion: reduce) { .bar__pole .pole__mark, .hero__pole .pole__mark { transition: none; } }
+
+/* ---------- 5. Contents sidebar ---------- */
+.dots__head { padding-bottom: 12px; margin-bottom: 6px; border-bottom: 4px solid var(--s-ink); }
+.dots a { border-left: 0; padding: 8px 0; color: var(--s-ink); opacity: .55; }
+.dots a span { grid-template-columns: 40px 1fr; font: 600 14px/1.25 var(--s-font); }
+.dots a em { font: 800 12px/1.5 var(--s-font); color: var(--s-ink); }
+.dots a:hover { opacity: 1; }
+.dots a.is-active { opacity: 1; border-left: 0; padding-left: 0; }
+.dots a.is-active em { color: var(--s-red); }
+.dots a.is-active span { box-shadow: inset 0 -3px 0 var(--s-red); }
+
+/* ---------- 6. Hero: full-screen poster ---------- */
+.hero { position: relative; overflow: hidden; max-width: none; padding-left: var(--gut); padding-right: var(--gut); }
+.hero__inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; }
+.hero__meta { border-top: var(--s-rule) solid var(--s-ink); border-bottom: 0; padding: 14px 0 0; color: var(--s-ink); }
+.hero__meta span + span::before { content: "/"; color: var(--s-red); margin: 0 .8em; }
+.hero__titleblock { margin-top: clamp(28px, 6vh, 72px); }
+.hero__title {
+  font: 800 clamp(46px, 9.4vw, 150px)/.88 var(--s-font) !important; letter-spacing: -.045em !important;
+  max-width: 11ch; text-wrap: balance;
+}
+.hero__title em { font-style: normal; font-weight: 400; color: var(--s-ink); }
+.hero__title .moscow { color: var(--s-red); }
+.hero__sub { margin-top: 24px; max-width: 30ch; font: 400 clamp(19px, 1.8vw, 26px)/1.3 var(--s-font); color: var(--s-ink); }
+.hero__abstract { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 var(--s-gap); }
+.hero__abstract .label { grid-column: 1 / 4; color: var(--s-red); }
+.hero__hook { grid-column: 4 / 11; font: 600 clamp(20px, 2vw, 28px)/1.3 var(--s-font); max-width: 34ch; }
+.hero__facts { border-top: 2px solid var(--s-ink); border-bottom: 0; }
+.hero__facts div + div { border-left: 2px solid var(--s-ink); }
+.hero__facts dd { font: 700 18px/1.25 var(--s-font); }
+/* the big red disc */
+.sw-disc { position: absolute; z-index: 0; right: -16vw; top: 6vh; width: min(40vw, 580px); aspect-ratio: 1; border-radius: 50%; background: var(--s-red); pointer-events: none; }
+.hero__title { max-width: 9.2ch; }
+.hero__title { position: relative; }
+@media (max-width: 1100px) { .sw-disc { width: 34vw; right: -12vw; top: 7vh; } }
+@media (max-width: 760px) {
+  .hero__abstract { grid-template-columns: 1fr; }
+  .hero__abstract .label, .hero__hook { grid-column: auto; }
+  .hero__meta span + span::before { content: none; }
+  .sw-disc { display: none; }
+  .hero__title { max-width: none; border-bottom: 12px solid var(--s-red); padding-bottom: 18px; }
+  /* compact top bar */
+  .bar { column-gap: 10px; }
+  .bar__name { font-size: 14px; }
+  .bar__nav { gap: 8px; font-size: 11px; letter-spacing: .06em; }
+  .theme, .bar__lang { padding: 5px 7px; font-size: 11px; }
+  .bar__pole .pole__end { font-size: 9px; }
+}
+
+/* Georgian page: BPG Typewriter has one weight, keep it thickened */
+:lang(ka) .hero__title { -webkit-text-stroke: 1.6px currentColor; letter-spacing: -.01em !important; }
+.ai-note { background: transparent; border-left: 4px solid var(--s-red); color: var(--s-ink); font-family: var(--s-font); }
+.ai-note a { color: var(--s-red); }
+
+/* ---------- 7. Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .sw-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .sw-in.is-seen { opacity: 1; transform: none; }
+}

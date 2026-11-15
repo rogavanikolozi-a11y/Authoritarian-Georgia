@@ -74,6 +74,10 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="swiss.css?v=20261117a">
 </head>
 <body>
 <a class="skip" href="#main">Skip to the story</a>
@@ -131,11 +135,12 @@
 
 <!-- ============================ 0. HERO ============================ -->
 <section class="hero" id="hero" data-section="hero">
+  <div class="sw-disc" aria-hidden="true"></div>
   <div class="hero__inner">
     <p class="hero__meta"><span>University of Tartu</span><span>Johan Skytte Institute of Political Studies</span><span>Master’s thesis · 2026</span></p>
 
     <div class="hero__titleblock">
-      <h1 class="hero__title">Between Brussels <em>and</em>&nbsp;Moscow</h1>
+      <h1 class="hero__title">Between Brussels <em>and</em> <span class="moscow">Moscow</span></h1>
       <p class="hero__sub">Authoritarian learning as a tool of power consolidation in Georgia</p>
     </div>
 
@@ -664,5 +669,6 @@
 <script defer src="vendor/d3.v7.min.js"></script>
 <script defer src="vendor/topojson-client.v3.min.js"></script>
 <script defer src="main.js?v=20261116e"></script>
+<script defer src="swiss.js?v=20261117a"></script>
 </body>
 </html>
