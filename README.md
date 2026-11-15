@@ -19,6 +19,7 @@ publishes it in a few minutes.
 | `main.js` | Draws the maps and diagrams and runs scrolling and the theme switch. Shared by both pages |
 | `styles.css` | Design. Colours are under "Tokens" at the top; dark-mode colours sit right below |
 | `404.html` | "Page not found" page |
+| `data/corpus.csv` | The 386 statements analysed (ID, speaker, date, Radio Tavisupleba link), from Appendix 1 of the thesis |
 | `sitemap.xml` | List of pages for Google |
 | `googlee7d4478635277d5d.html` | Google Search Console verification. **Do not delete** |
 | `images/` | `portrait.jpg`, `photo-2.jpg`, `preview-map.png` (link preview image) |
