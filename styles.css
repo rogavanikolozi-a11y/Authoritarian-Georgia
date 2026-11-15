@@ -7,6 +7,7 @@
    ========================================================================= */
 
 /* ---------- 1. Fonts (self-hosted) ---------- */
+@font-face { font-family: "Noto Serif Georgian"; src: url("fonts/noto-serif-georgian-georgian-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F; }
 @font-face { font-family: "Newsreader"; src: url("fonts/newsreader-latin-opsz-normal.woff2") format("woff2"); font-weight: 200 800; font-style: normal; font-display: swap; }
 @font-face { font-family: "IBM Plex Sans"; src: url("fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "IBM Plex Sans"; src: url("fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
@@ -179,6 +180,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .bar__nav { display: flex; justify-content: flex-end; align-items: center; gap: 22px; font: 400 13px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
 .bar__link { text-decoration: none; }
 .bar__link:hover { color: var(--ge); }
+.bar__lang { text-decoration: none; padding: 6px 10px; border: 1px solid var(--rule); border-radius: 999px; font: 400 13px/1 "Noto Serif Georgian", var(--sans); letter-spacing: .02em; }
+.bar__lang:hover { border-color: var(--ge); color: var(--ge); }
 .theme { font: 400 11px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; color: var(--ink-2); }
 .theme:hover { border-color: var(--ink); color: var(--ink); }
 
