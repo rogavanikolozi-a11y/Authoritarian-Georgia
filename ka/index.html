@@ -34,6 +34,16 @@
   .finding { grid-template-columns: var(--off) minmax(0, 1fr); padding-bottom: 40px; }
   .finding__n { font-size: clamp(56px, 7vw, 96px); }
   .more { margin-top: 28px; }
+  /* BPG Typewriter has only one thin weight: thicken it slightly and darken grey text */
+  body { -webkit-text-stroke: .45px currentColor; }
+  .hero__title, .chapter__head h2, .about__head h2 { -webkit-text-stroke: 1.1px currentColor; }
+  .h3, .finding__body h3, .hero__sub, .inshort, .rq, .hero__hook, .bio { -webkit-text-stroke: .7px currentColor; }
+  :root { --ink-2: #33363C; --ink-3: #5F636B; }
+  .label, .hero__facts dt, .dots__head { font-size: 14px; }
+  .hero__meta { font-size: 13.5px; }
+  .btn { font-size: 14px; }
+  :root[data-theme="dark"] { --ink-2: #D2CFC8; --ink-3: #A4A7AD; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink-2: #D2CFC8; --ink-3: #A4A7AD; } }
   /* BPG Typewriter has no italic, so keep Georgian text upright */
   .rq, .hero__title em, .pole__mark b, .fig__title, .inshort { font-style: normal; }
   .rq::first-letter { all: unset; }
