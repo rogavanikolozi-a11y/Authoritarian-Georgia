@@ -828,6 +828,26 @@
     });
   })();
 
+  /* ------------------------------------------------------------------ language switch keeps your place */
+  /* arriving with #chapter: re-align once maps and diagrams have finished drawing */
+  if (location.hash.length > 1) {
+    window.addEventListener("load", function () {
+      setTimeout(function () { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView({ behavior: "auto" }); }, 300);
+    });
+  }
+  (function langSwitch() {
+    $$(".bar__lang").forEach(function (link) {
+      var base = link.getAttribute("href").split("#")[0];
+      link.addEventListener("click", function () {
+        var cur = "";
+        $$("[data-section]").forEach(function (sec) {
+          if (sec.id && sec.getBoundingClientRect().top < window.innerHeight * 0.4) cur = sec.id;
+        });
+        link.setAttribute("href", cur && cur !== "hero" ? base + "#" + cur : base);
+      });
+    });
+  })();
+
   (function cite() {
     var btn = $("#copyCite"), src = $("#citation"), msg = $("#copied");
     if (!btn || !src) return;
