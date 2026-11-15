@@ -41,7 +41,7 @@ publishes it in a few minutes.
 Map labels (country and city names) are intentionally in English on both pages.
 
 **After changing `styles.css`, `main.js`, `data.js` or `ka/data-ka.js`:** change the version number
-in the links to those files (`?v=20261115b`) in both `index.html` and `ka/index.html`, for example
+in the links to those files (`?v=20261115c`) in both `index.html` and `ka/index.html`, for example
 to `?v=20261201`. Otherwise browsers may keep showing the old saved version.
 
 ## Notes
