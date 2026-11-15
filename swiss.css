@@ -18,7 +18,7 @@
   font: 400 18px/1.62 var(--sans);
   letter-spacing: normal;
   text-transform: none;
-  font-synthesis: weight style;
+  font-synthesis: weight style small-caps;
 }
 
 /* ---------- 1. Tokens ---------- */
@@ -38,19 +38,19 @@
 body { background: var(--s-bg); color: var(--s-ink); font-family: var(--s-font); }
 ::selection { background: var(--s-red); color: #fff; }
 :focus-visible { outline: 3px solid var(--s-red); outline-offset: 3px; }
-a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
+a:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 
 /* small uppercase labels */
-.label, .dots__head, .hero__meta, .hero__facts dt, .chapter__head > .label {
+.label:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), .dots__head:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), .hero__meta:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), .hero__facts dt:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), .chapter__head > .label:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) {
   font: 600 12px/1.3 var(--s-font); letter-spacing: .14em; text-transform: uppercase; color: var(--s-ink);
 }
 
 /* buttons: flat blocks */
-.btn { border: 2px solid var(--s-ink); border-radius: 0; font: 700 13px/1 var(--s-font); letter-spacing: .1em; text-transform: uppercase; padding: 16px 22px; color: var(--s-ink); background: transparent; }
-.btn:hover { background: var(--s-ink); color: var(--s-bg); }
-.btn--solid { background: var(--s-red); border-color: var(--s-red); color: #fff; }
-.btn--solid:hover { background: var(--s-ink); border-color: var(--s-ink); color: var(--s-bg); }
-.btn--quiet { border-color: var(--s-ink); color: var(--s-ink); }
+.btn:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { border: 2px solid var(--s-ink); border-radius: 0; font: 700 13px/1 var(--s-font); letter-spacing: .1em; text-transform: uppercase; padding: 16px 22px; color: var(--s-ink); background: transparent; }
+.btn:hover:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { background: var(--s-ink); color: var(--s-bg); }
+.btn--solid:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { background: var(--s-red); border-color: var(--s-red); color: #fff; }
+.btn--solid:hover:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { background: var(--s-ink); border-color: var(--s-ink); color: var(--s-bg); }
+.btn--quiet:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { border-color: var(--s-ink); color: var(--s-ink); }
 
 /* ---------- 3. Top bar ---------- */
 .bar { background: var(--s-bg); -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 2px solid var(--s-ink); }
@@ -139,11 +139,10 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 /* Georgian page: BPG Typewriter has one weight, keep it thickened */
 /* no fake bold (it makes Georgian letters collide); thicken with a fine outline instead */
 html:lang(ka) { font-synthesis: none; }
-:lang(ka) .label, :lang(ka) .hero__meta, :lang(ka) .hero__facts, :lang(ka) .dots, :lang(ka) .bar__name,
-:lang(ka) .hero__hook, :lang(ka) .btn, :lang(ka) .bar__nav { -webkit-text-stroke: .35px currentColor; }
+:lang(ka) .label:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .hero__meta:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .hero__facts:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .dots:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .bar__name:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .hero__hook:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .btn:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .bar__nav:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { -webkit-text-stroke: .35px currentColor; }
 :lang(ka) .dots a.is-active span { -webkit-text-stroke: .7px currentColor; }
 :lang(ka) .hero__title { -webkit-text-stroke: 2px currentColor; letter-spacing: .01em !important; line-height: 1.12 !important; }
-:lang(ka) .label, :lang(ka) .hero__meta, :lang(ka) .hero__facts dt, :lang(ka) .dots__head { letter-spacing: .04em; line-height: 1.6; }
+:lang(ka) .label:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .hero__meta, :lang(ka) .hero__facts dt, :lang(ka) .dots__head { letter-spacing: .04em; line-height: 1.6; }
 :lang(ka) .dots a span { line-height: 1.55; }
 :lang(ka) .hero__hook, :lang(ka) .hero__sub { line-height: 1.5; }
 .ai-note { background: transparent; border-left: 4px solid var(--s-red); color: var(--s-ink); font-family: var(--s-font); }
@@ -181,13 +180,13 @@ html:lang(ka) { font-synthesis: none; }
 /* body text: columns 5 to 11 of the 12-column grid */
 .prose { margin-left: calc((100% + var(--s-gap)) / 12 * 4); max-width: 68ch; font: 400 18px/1.65 var(--s-font); }
 .chapter__head + .prose > p:first-child::first-letter { float: none; margin: 0; font: inherit; color: inherit; }
-.h3, .prose .h3 { font: 800 clamp(24px, 2.4vw, 34px)/1.1 var(--s-font); letter-spacing: -.02em; }
+.h3:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), .prose .h3:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { font: 800 clamp(24px, 2.4vw, 34px)/1.1 var(--s-font); letter-spacing: -.02em; }
 .rq {
   margin: 1.6em 0 !important; padding: 20px 0 0; border-top: var(--s-rule) solid var(--s-red); border-bottom: 0;
   text-align: left; font: 800 clamp(26px, 3vw, 44px)/1.08 var(--s-font) !important; font-style: normal; letter-spacing: -.02em;
 }
 .rq .label { color: var(--s-red); margin-bottom: 12px; }
-.plain li::before { width: 12px; height: 4px; top: .6em; background: var(--s-red); }
+.plain li:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *)::before { width: 12px; height: 4px; top: .6em; background: var(--s-red); }
 
 /* asides: a thick red rule instead of a box */
 .aside, .limits {
@@ -225,6 +224,89 @@ html:lang(ka) { font-synthesis: none; }
 :lang(ka) .chapter__head h2 { -webkit-text-stroke: 1.3px currentColor; letter-spacing: .01em !important; line-height: 1.15 !important; }
 :lang(ka) .inshort { -webkit-text-stroke: .6px currentColor; line-height: 1.45 !important; }
 :lang(ka) .rq { -webkit-text-stroke: .9px currentColor; line-height: 1.35 !important; letter-spacing: 0; }
-:lang(ka) .h3, :lang(ka) .aside h3, :lang(ka) .dims dt { -webkit-text-stroke: .7px currentColor; line-height: 1.3; letter-spacing: 0; }
+:lang(ka) .h3:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .aside h3:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *), :lang(ka) .dims dt:not(:is(#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly, #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox, #trade) *) { -webkit-text-stroke: .7px currentColor; line-height: 1.3; letter-spacing: 0; }
 :lang(ka) .limits__lead { -webkit-text-stroke: .5px currentColor; line-height: 1.5 !important; }
 :lang(ka) .sw-stats span { letter-spacing: .04em; -webkit-text-stroke: .35px currentColor; }
+
+/* ---------- 9. 04.2 Checkpoints: four poster panels (above the unchanged interactive) ---------- */
+.sw-cp { margin: clamp(40px, 6vw, 72px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-gap); counter-reset: none; }
+.sw-cp li { border-top: var(--s-rule) solid var(--s-ink); padding-top: 16px; min-height: 230px; display: flex; flex-direction: column; }
+.sw-cp b { font: 800 clamp(72px, 9vw, 150px)/.8 var(--s-font); letter-spacing: -.05em; color: var(--s-red); }
+.sw-cp .label { margin-top: auto; padding-top: 18px; }
+.sw-cp h3 { margin-top: 8px; font: 800 clamp(18px, 1.6vw, 24px)/1.15 var(--s-font); letter-spacing: -.01em; }
+.sw-cp li:last-child { background: var(--s-ink); color: var(--s-bg); border-top-color: var(--s-red); padding: 16px 16px 18px; }
+.sw-cp li:last-child .label { color: var(--s-bg); }
+@media (max-width: 860px) { .sw-cp { grid-template-columns: 1fr 1fr; } .sw-cp li { min-height: 180px; } }
+@media (max-width: 480px) { .sw-cp { grid-template-columns: 1fr; } }
+
+/* ---------- 10. #law: the red protest poster (full width; figures inside keep their own panel) ---------- */
+.deep {
+  position: relative; margin-top: clamp(72px, 10vw, 130px); padding: clamp(40px, 6vw, 80px) 0 clamp(48px, 7vw, 96px);
+  background: var(--s-red); color: #fff;
+  box-shadow: 0 0 0 100vmax var(--s-red); clip-path: inset(0 -100vmax 0 calc(-1 * var(--gut)));
+}
+.deep__head { margin-left: 0; padding-top: 0; border-top: 0; max-width: none; }
+.deep__head .label { color: #fff; }
+.deep__head h3 { margin-top: 14px; max-width: 16ch; font: 800 clamp(44px, 7vw, 120px)/.95 var(--s-font) !important; letter-spacing: -.02em; color: #111; }
+.deep .prose { color: #fff; font-weight: 500; }
+.deep .prose a { color: #fff; }
+.deep .h4 { color: #111; }
+
+/* ---------- 11. 04.3 Experts: big quotes with a thick red rule ---------- */
+.pulls { gap: clamp(28px, 4vw, 64px); }
+.pull { border-left: 8px solid var(--s-red); padding-left: 24px; }
+.pull p { font: 800 clamp(26px, 3.2vw, 46px)/1.08 var(--s-font) !important; letter-spacing: -.02em; text-wrap: balance; }
+.pull footer { margin-top: 18px; padding-top: 0; border-top: 0; font: 600 12px/1.5 var(--s-font); letter-spacing: .12em; text-transform: uppercase; color: var(--s-ink); }
+.split .h3 { border-top: 4px solid var(--s-ink); padding-top: 14px; }
+.split p, .split li { font: 400 17px/1.6 var(--s-font); }
+
+/* ---------- 12. 05 Findings: numbered blocks ---------- */
+.findings { margin-top: clamp(48px, 7vw, 96px); }
+.finding { border-top: var(--s-rule) solid var(--s-ink); }
+.finding__n { font: 800 clamp(96px, 13vw, 220px)/.8 var(--s-font) !important; letter-spacing: -.06em; color: var(--s-red); }
+@media (max-width: 980px) { .finding__n { position: static !important; display: block; font-size: 96px !important; line-height: .85 !important; margin-bottom: 20px; } .finding__body { grid-row: auto; } .finding > * { grid-column: 1 / -1 !important; } }
+.finding__body h3 { font: 800 clamp(30px, 3.6vw, 54px)/1 var(--s-font) !important; letter-spacing: -.025em; }
+.finding__body p { font: 400 18px/1.65 var(--s-font); }
+.endcta { margin-top: 2em !important; }
+.sw-corpus-label { margin: clamp(48px, 6vw, 72px) 0 10px calc((100% + var(--s-gap)) / 12 * 4); border-top: 4px solid var(--s-ink); padding-top: 12px; color: var(--s-red); max-width: calc(var(--col) + 120px); }
+@media (max-width: 860px) { .sw-corpus-label { margin-left: 0; } }
+
+/* ---------- 13. About ---------- */
+.about__head { border-top: var(--s-rule) solid var(--s-ink); padding-top: 28px; }
+.about__head h2 { font: 800 clamp(48px, 8vw, 132px)/.9 var(--s-font) !important; letter-spacing: -.04em; }
+.portrait, .photo2 { background: none; }
+.portrait img, .photo2 img { filter: grayscale(1) contrast(1.1); mix-blend-mode: normal; aspect-ratio: 4 / 5; object-fit: cover; }
+.photo2 img { aspect-ratio: 1; }
+.portrait::after, .photo2::after { content: none; }
+.bio { font: 600 clamp(20px, 2vw, 28px)/1.35 var(--s-font); }
+.contact a { font-weight: 700; }
+.cv li { border-top: 2px solid var(--s-ink); }
+.cv__when { font: 700 12px/1.6 var(--s-font); letter-spacing: .1em; text-transform: uppercase; color: var(--s-red); }
+.cv__what { font: 800 19px/1.2 var(--s-font); }
+.cv__where { font: 400 15px/1.45 var(--s-font); color: var(--s-ink); }
+.skills li { border-top: 2px solid var(--s-ink); font: 500 16px/1.4 var(--s-font); }
+.about .h3 { font: 800 22px/1.2 var(--s-font); letter-spacing: -.01em; }
+
+/* ---------- 14. Footer: a black block ---------- */
+.foot {
+  margin-top: clamp(96px, 12vw, 160px); padding-top: clamp(40px, 6vw, 72px); padding-bottom: 48px;
+  background: #111; color: #F5F5F2; border-top: 8px solid var(--s-red);
+  box-shadow: 0 0 0 100vmax #111; clip-path: inset(0 -100vmax -100vmax calc(-1 * var(--gut)));
+  position: relative; z-index: 41;
+}
+.dots { z-index: 40; }
+@media (min-width: 1280px) { .foot { clip-path: inset(0 -100vmax -100vmax 0); } }
+.sw-foot-name { font: 800 clamp(48px, 9vw, 150px)/.9 var(--s-font); letter-spacing: -.045em; color: #F5F5F2; margin-bottom: clamp(32px, 5vw, 56px); }
+.foot__grid { border-top: 2px solid #F5F5F2; color: #F5F5F2; font-family: var(--s-font); }
+.foot .label { color: var(--s-red); }
+.foot a { color: #F5F5F2; }
+.foot .cite { color: #F5F5F2; font: 400 15px/1.55 var(--s-font); }
+.foot .btn { border-color: #F5F5F2; color: #F5F5F2; }
+.foot .btn:hover { background: #F5F5F2; color: #111; }
+.foot__copy { color: #F5F5F2; font: 600 12px/1 var(--s-font); letter-spacing: .14em; }
+.sw-credits { color: #F5F5F2; opacity: .85; }
+
+/* Georgian: one-weight font gets a fine outline on the new headings */
+:lang(ka) .sw-cp h3, :lang(ka) .finding__body h3, :lang(ka) .about__head h2, :lang(ka) .sw-foot-name { -webkit-text-stroke: 1px currentColor; letter-spacing: 0 !important; line-height: 1.2 !important; }
+:lang(ka) .deep__head h3, :lang(ka) .pull p { -webkit-text-stroke: 1.1px currentColor; letter-spacing: 0 !important; line-height: 1.25 !important; }
+:lang(ka) .bio, :lang(ka) .cv__what { -webkit-text-stroke: .5px currentColor; line-height: 1.5; }
