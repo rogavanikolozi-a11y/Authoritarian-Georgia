@@ -277,7 +277,7 @@ window.SITE_DATA = {
       quote: {
         text: "The main goal [of Resolution] is to facilitate the processes that failed in 2022.",
         who: "Irakli Kobakhidze",
-        when: "29 April 2024",
+        when: "26 April 2024",
         context: "On a European Parliament resolution about the law",
       },
     },
