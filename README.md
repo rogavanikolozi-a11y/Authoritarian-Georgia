@@ -22,7 +22,7 @@ publishes it in a few minutes.
 | `data/corpus.csv` | The 386 statements analysed (ID, speaker, date, Radio Tavisupleba link), from Appendix 1 of the thesis |
 | `sitemap.xml` | List of pages for Google |
 | `googlee7d4478635277d5d.html` | Google Search Console verification. **Do not delete** |
-| `images/` | `portrait.jpg`, `photo-2.jpg`, `preview-map.png` (link preview image) |
+| `images/` | `portrait.jpg`, `photo-2.jpg`, `preview-swiss.png` (link preview image) |
 | `fonts/` | Newsreader, IBM Plex, Noto Serif Georgian, BPG Typewriter A (Georgian page) |
 | `assets/` | `thesis.pdf`, `geo.js` (map shapes, Natural Earth) |
 | `vendor/` | D3 v7 and topojson-client |
@@ -49,7 +49,7 @@ to `?v=20261201`. Otherwise browsers may keep showing the old saved version.
 - The email address is stored backwards in two parts (`emailParts` in `data.js`, and in a small
   script at the bottom of `ka/index.html`) so spam bots can't read it. The page puts it back together.
 - The Georgian translation was made with AI help; the page says so at the top.
-- The link preview image is `images/preview-map.png`. If you replace it, give it a new file name
+- The link preview image is `images/preview-swiss.png`. If you replace it, give it a new file name
   and update the `og:image` and `twitter:image` lines in both pages. Apps such as Instagram and
   Facebook keep old previews otherwise.
 
