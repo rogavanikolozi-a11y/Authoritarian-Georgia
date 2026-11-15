@@ -471,7 +471,7 @@ window.SITE_DATA = {
   /* ---------- About: experience and education ---------- */
   cv: [
     { when: "2026 to present", what: "Political Analyst", where: "TV Formula, “Droeba” (Tbilisi)" },
-    { when: "2024 to 2026", what: "MSc Politics and Governance in the Digital Age", where: "University of Tartu, GPA 4.25" },
+    { when: "2024 to 2026", what: "MSc Politics and Governance in the Digital Age", where: "University of Tartu" },
     { when: "2025 to 2026", what: "Erasmus+ semester, Political Science", where: "University of Bologna" },
     { when: "2025", what: "Research Assistant", where: "Visionary Analytics (Vilnius), Innovation, Research and Development" },
     { when: "2025", what: "Intern", where: "Konrad-Adenauer-Stiftung Baltic Office (Tallinn)" },
