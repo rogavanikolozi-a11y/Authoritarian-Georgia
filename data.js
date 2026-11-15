@@ -87,7 +87,7 @@ window.SITE_DATA = {
       tag: "Overview",
       focus: [[-9, 35.5], [53, 61.5]],
       points: [
-        "Russia, Belarus and Hungary are reference points in this thesis, not full comparative cases. I use them to recognise patterns.",
+        "Russia, Belarus and Hungary are reference points in this thesis, not full comparative cases. They serve to recognise patterns.",
         "The lines on the map are shared repertoires that the thesis identifies. They are not proof of instructions.",
       ],
     },
