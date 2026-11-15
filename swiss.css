@@ -18,6 +18,7 @@
   font: 400 18px/1.62 var(--sans);
   letter-spacing: normal;
   text-transform: none;
+  font-synthesis: weight style;
 }
 
 /* ---------- 1. Tokens ---------- */
@@ -75,8 +76,18 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .hero__pole .pole__mark i { width: 28px; height: 28px; border-radius: 50%; transform: none; background: var(--s-red); }
 .hero__pole .pole__mark b { bottom: 36px; font: 800 14px/1 var(--s-font); letter-spacing: .12em; text-transform: uppercase; color: var(--s-red); -webkit-text-stroke: 0; }
 .hero__pole .pole__end--w { color: var(--s-ink); }
-.hero__pole .pole__end, .hero__pole .pole__end--e { font-size: clamp(11px, 1vw, 14px); }
 @media (prefers-reduced-motion: reduce) { .bar__pole .pole__mark, .hero__pole .pole__mark { transition: none; } }
+
+/* hero line: Brussels = black block, Moscow = the red disc (the "gravity centre") */
+.hero__pole { margin-top: clamp(40px, 7vh, 80px); }
+.hero__pole .pole { gap: 0; align-items: center; }
+.hero__pole .pole__end--w { background: var(--s-ink); color: var(--s-bg); padding: 12px 14px; font-size: clamp(11px, 1vw, 14px); }
+.hero__pole .pole__end--e {
+  display: grid; place-items: center; width: clamp(120px, 17vw, 260px); aspect-ratio: 1; border-radius: 50%;
+  background: var(--s-red); color: #fff !important; font-size: clamp(12px, 1.2vw, 16px); margin-left: -2px;
+}
+.hero__pole .pole__track::before { height: 6px; margin-top: -3px; }
+@media (max-width: 760px) { .hero__pole .pole__end--e { width: 104px; } .hero__pole .pole__end--w { padding: 9px 10px; } }
 
 /* ---------- 5. Contents sidebar ---------- */
 .dots__head { padding-bottom: 12px; margin-bottom: 6px; border-bottom: 4px solid var(--s-ink); }
@@ -86,7 +97,7 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .dots a:hover { opacity: 1; }
 .dots a.is-active { opacity: 1; border-left: 0; padding-left: 0; }
 .dots a.is-active em { color: var(--s-red); }
-.dots a.is-active span { box-shadow: inset 0 -3px 0 var(--s-red); }
+.dots a.is-active span { font-weight: 800; }
 
 /* ---------- 6. Hero: full-screen poster ---------- */
 .hero { position: relative; overflow: hidden; max-width: none; padding-left: var(--gut); padding-right: var(--gut); }
@@ -95,7 +106,7 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .hero__meta span + span::before { content: "/"; color: var(--s-red); margin: 0 .8em; }
 .hero__titleblock { margin-top: clamp(28px, 6vh, 72px); }
 .hero__title {
-  font: 800 clamp(46px, 9.4vw, 150px)/.88 var(--s-font) !important; letter-spacing: -.045em !important;
+  font: 800 clamp(46px, 9.4vw, 150px)/.92 var(--s-font) !important; letter-spacing: -.025em !important;
   max-width: 11ch; text-wrap: balance;
 }
 .hero__title em { font-style: normal; font-weight: 400; color: var(--s-ink); }
@@ -107,16 +118,11 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .hero__facts { border-top: 2px solid var(--s-ink); border-bottom: 0; }
 .hero__facts div + div { border-left: 2px solid var(--s-ink); }
 .hero__facts dd { font: 700 18px/1.25 var(--s-font); }
-/* the big red disc */
-.sw-disc { position: absolute; z-index: 0; right: -16vw; top: 6vh; width: min(40vw, 580px); aspect-ratio: 1; border-radius: 50%; background: var(--s-red); pointer-events: none; }
-.hero__title { max-width: 9.2ch; }
 .hero__title { position: relative; }
-@media (max-width: 1100px) { .sw-disc { width: 34vw; right: -12vw; top: 7vh; } }
 @media (max-width: 760px) {
   .hero__abstract { grid-template-columns: 1fr; }
   .hero__abstract .label, .hero__hook { grid-column: auto; }
   .hero__meta span + span::before { content: none; }
-  .sw-disc { display: none; }
   .hero__title { max-width: none; border-bottom: 12px solid var(--s-red); padding-bottom: 18px; }
   /* compact top bar */
   .bar { column-gap: 10px; }
@@ -127,7 +133,15 @@ a { text-decoration-thickness: 2px; text-underline-offset: .2em; }
 }
 
 /* Georgian page: BPG Typewriter has one weight, keep it thickened */
-:lang(ka) .hero__title { -webkit-text-stroke: 1.6px currentColor; letter-spacing: -.01em !important; }
+/* no fake bold (it makes Georgian letters collide); thicken with a fine outline instead */
+html:lang(ka) { font-synthesis: none; }
+:lang(ka) .label, :lang(ka) .hero__meta, :lang(ka) .hero__facts, :lang(ka) .dots, :lang(ka) .bar__name,
+:lang(ka) .hero__hook, :lang(ka) .btn, :lang(ka) .bar__nav { -webkit-text-stroke: .35px currentColor; }
+:lang(ka) .dots a.is-active span { -webkit-text-stroke: .7px currentColor; }
+:lang(ka) .hero__title { -webkit-text-stroke: 2px currentColor; letter-spacing: .01em !important; line-height: 1.12 !important; }
+:lang(ka) .label, :lang(ka) .hero__meta, :lang(ka) .hero__facts dt, :lang(ka) .dots__head { letter-spacing: .04em; line-height: 1.6; }
+:lang(ka) .dots a span { line-height: 1.55; }
+:lang(ka) .hero__hook, :lang(ka) .hero__sub { line-height: 1.5; }
 .ai-note { background: transparent; border-left: 4px solid var(--s-red); color: var(--s-ink); font-family: var(--s-font); }
 .ai-note a { color: var(--s-red); }
 
