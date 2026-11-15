@@ -34,6 +34,14 @@
     "official line": "ოფიციალური ხაზი",
     "actual course": "რეალური კურსი",
     "Copied": "დაკოპირდა",
+    "ID": "ID",
+    "Speaker": "მომხსენებელი",
+    "Date": "თარიღი",
+    "Source": "წყარო",
+    "Radio Tavisupleba": "რადიო თავისუფლება",
+    "Irakli Kobakhidze": "ირაკლი კობახიძე",
+    "Irakli Gharibashvili": "ირაკლი ღარიბაშვილი",
+    "The table could not be loaded.": "ცხრილი ვერ ჩაიტვირთა.",
     "Select the text and copy it": "მონიშნეთ ტექსტი და დააკოპირეთ",
   };
 

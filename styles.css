@@ -421,6 +421,16 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .mx td { width: 12%; } .mx tbody th { font-size: 16px; padding-right: 8px; }
 }
 
+/* corpus table, folded until opened */
+.corpus { margin: clamp(32px, 4vw, 48px) 0 0 var(--off); max-width: calc(var(--col) + 120px); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.corpus summary { cursor: pointer; padding: 14px 0; font: 500 12px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ge); }
+.corpus__wrap { max-height: 460px; overflow: auto; margin-bottom: 14px; }
+.corpus__note { padding: 8px 0; color: var(--ink-2); font-size: 15px; }
+.corpus__table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.corpus__table th { position: sticky; top: 0; background: var(--paper); text-align: left; padding: 8px 12px 8px 0; font: 500 11px/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--ink); }
+.corpus__table td { padding: 7px 12px 7px 0; border-bottom: 1px solid var(--rule); }
+.corpus__id, .corpus__date { font-variant-numeric: tabular-nums; color: var(--ink-2); white-space: nowrap; }
+
 /* ---------- 9. Scrollytelling and maps ---------- */
 .scrolly { margin-top: clamp(40px, 6vw, 72px); }
 .step__card { padding-top: 18px; border-top: 2px solid var(--ink); }

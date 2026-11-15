@@ -800,6 +800,34 @@
   })();
 
   /* ------------------------------------------------------------------ copy citation */
+  /* ------------------------------------------------------------------ corpus table (loads when opened) */
+  (function corpus() {
+    var box = $("#corpusBox");
+    if (!box) return;
+    var wrap = $(".corpus__wrap", box);
+    box.addEventListener("toggle", function () {
+      if (!box.open || box.getAttribute("data-done")) return;
+      box.setAttribute("data-done", "1");
+      fetch(box.getAttribute("data-src")).then(function (r) { return r.text(); }).then(function (txt) {
+        var lines = txt.trim().split(/\r?\n/).slice(1);
+        var t = el("table", "corpus__table"), head = el("tr");
+        [T("ID"), T("Speaker"), T("Date"), T("Source")].forEach(function (h) { var th = el("th", null, h); th.scope = "col"; head.appendChild(th); });
+        var thead = el("thead"); thead.appendChild(head); t.appendChild(thead);
+        var tb = el("tbody");
+        lines.forEach(function (line) {
+          var c = line.split(","), tr = el("tr");
+          tr.appendChild(el("td", "corpus__id", c[0]));
+          tr.appendChild(el("td", null, T(c[1])));
+          tr.appendChild(el("td", "corpus__date", c[2]));
+          var td = el("td"), a = el("a", null, T("Radio Tavisupleba"));
+          a.href = c.slice(3).join(","); a.target = "_blank"; a.rel = "noopener";
+          td.appendChild(a); tr.appendChild(td); tb.appendChild(tr);
+        });
+        t.appendChild(tb); wrap.textContent = ""; wrap.appendChild(t);
+      }).catch(function () { wrap.textContent = T("The table could not be loaded."); });
+    });
+  })();
+
   (function cite() {
     var btn = $("#copyCite"), src = $("#citation"), msg = $("#copied");
     if (!btn || !src) return;
