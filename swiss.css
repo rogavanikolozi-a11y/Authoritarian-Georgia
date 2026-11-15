@@ -316,9 +316,9 @@ html:lang(ka) { font-synthesis: none; }
    General charts: black + Swiss red (red = Georgia / the key element).
    Maps: EU blue for Europe, Swiss red for Russia, plum (between the two) for Georgia,
    Belarus in its flag green, Hungary hatched in its flag red over EU blue. */
-:root { --s-eu: #003399; --s-ge: #721D56; --s-by: #2F8A4C; --s-hu: #CE2939; --s-mid: #8C8C88; }
-:root[data-theme="dark"] { --s-eu: #5C82F0; --s-ge: #C65A9E; --s-by: #4FB46C; --s-hu: #F0505F; --s-mid: #8A8A86; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s-eu: #5C82F0; --s-ge: #C65A9E; --s-by: #4FB46C; --s-hu: #F0505F; --s-mid: #8A8A86; } }
+:root { --s-eu: #003399; --s-ge: #14213D; --s-by: #2F8A4C; --s-hu: #CE2939; --s-mid: #8C8C88; }
+:root[data-theme="dark"] { --s-eu: #5C82F0; --s-ge: #D0DBF5; --s-by: #4FB46C; --s-hu: #F0505F; --s-mid: #8A8A86; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s-eu: #5C82F0; --s-ge: #D0DBF5; --s-by: #4FB46C; --s-hu: #F0505F; --s-mid: #8A8A86; } }
 
 #figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly,
 #figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox {
@@ -459,3 +459,21 @@ html:lang(ka) { font-synthesis: none; }
   .prose { font-size: 20px; }
   .aside p, .limits p { font-size: 18px; }
 }
+
+/* ---------- 22. Georgia map: brutalist (navy Georgia, red Russia, red stripes on occupied land) ---------- */
+#figGeorgia .nb { fill: color-mix(in srgb, var(--s-ink) 10%, var(--paper)); stroke: var(--paper); stroke-width: 1.5; }
+#figGeorgia .nb--ru { fill: var(--s-red); }
+#figGeorgia .ge-under { stroke: var(--s-ink); stroke-width: 7; }
+#figGeorgia .ge-land { fill: var(--s-ge); stroke: var(--s-ink); stroke-width: 3; }
+#figGeorgia .occ { stroke: var(--s-red); stroke-width: 3; }
+#figGeorgia .occ-line { stroke: var(--s-red); stroke-width: 3; }
+#figGeorgia .leader { stroke: var(--s-ink); stroke-width: 2; }
+#figGeorgia .mlabel { font-family: var(--s-font); font-weight: 800; letter-spacing: .12em; }
+#figGeorgia .mlabel--plain { letter-spacing: .02em; font-size: 14px; }
+#figGeorgia .mlabel--onru { fill: #fff; stroke: none; font-size: 15px; letter-spacing: .2em; }
+#figGeorgia .mlabel--plain.mlabel--onru { font-size: 14px; letter-spacing: .02em; }
+#figGeorgia .mlabel--ge { fill: var(--paper); stroke: none; }
+#figGeorgia .city--ge { fill: var(--paper); stroke: none; }
+#figGeorgia .mlabel--sea { font-weight: 600; }
+#figGeorgia .lg--occ { background: repeating-linear-gradient(45deg, var(--s-red) 0 3px, var(--s-ge) 3px 6px); border: 2px solid var(--s-red); }
+#figGeorgia .lg--cap { background: var(--s-ge); }

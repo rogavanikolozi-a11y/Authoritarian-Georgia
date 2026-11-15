@@ -699,7 +699,7 @@
       var proj = d3.geoMercator().fitExtent([[W * 0.07, H * (small ? 0.26 : 0.2)], [W * 0.93, H * (small ? 0.8 : 0.84)]], ge);
       var path = d3.geoPath(proj);
       svg.append("g").selectAll("path").data(europeFeatures().filter(function (f) { return f.properties.name !== "Georgia"; }))
-        .join("path").attr("class", "nb").attr("d", path);
+        .join("path").attr("class", function (f) { return f.properties.name === "Russia" ? "nb nb--ru" : "nb"; }).attr("d", path);
       svg.append("path").datum(ge).attr("class", "ge-under").attr("d", path);
       svg.append("path").datum(ge).attr("class", "ge-land").attr("d", path);
       svg.append("g").selectAll("path").data(occ).join("path").attr("class", "occ").attr("style", "fill:url(#occHatch)").attr("d", path);
@@ -709,7 +709,7 @@
         lines.forEach(function (l, i) { t.append("tspan").attr("x", at[0]).attr("dy", i ? "1.25em" : 0).text(T(l)); });
       }
       // neighbours and sea
-      label(["Russia"], proj(small ? [46.5, 42.95] : [42.3, 43.72]));
+      label(["Russia"], proj(small ? [46.5, 42.95] : [42.3, 43.72]), "mlabel--onru");
       label(["Turkey"], proj([42.2, 40.78]));
       if (!small) { label(["Armenia"], proj([44.75, 40.72])); label(["Azerbaijan"], proj([46.55, 40.95])); }
       label(["Black Sea"], proj([40.55, small ? 41.55 : 41.75]), "mlabel--sea");
@@ -722,7 +722,7 @@
       label(["Abkhazia"], abL, "mlabel--plain mlabel--ru");
       var soL = [so[0] + W * 0.03, so[1] - H * (small ? 0.3 : 0.27)];
       svg.append("path").attr("class", "leader").attr("d", "M" + so[0] + "," + so[1] + "L" + soL[0] + "," + (soL[1] + 22));
-      label(["Tskhinvali region /", "South Ossetia"], soL, "mlabel--plain mlabel--ru");
+      label(["Tskhinvali region /", "South Ossetia"], soL, "mlabel--plain mlabel--onru");
 
       // Tbilisi
       var tb = proj(CITY.Tbilisi);
