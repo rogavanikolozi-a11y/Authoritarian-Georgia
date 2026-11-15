@@ -144,3 +144,77 @@ html:lang(ka) { font-synthesis: none; }
   .sw-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
   .sw-in.is-seen { opacity: 1; transform: none; }
 }
+
+/* ---------- 8. Chapters: headings, text, numbers (01, 02, 03 ...) ---------- */
+/* Note: --off is left untouched because the findings figures use it for their width. */
+.chapter__head {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-gap); align-items: start;
+  padding: 28px 0 0; border-top: var(--s-rule) solid var(--s-ink);
+}
+.chapter__head::before { display: none; }
+.chapter__num {
+  position: static; grid-column: 1 / 5; grid-row: 1 / span 3; margin: 0;
+  font: 800 clamp(72px, 12vw, 210px)/.8 var(--s-font) !important; letter-spacing: -.05em; color: var(--s-red); font-style: normal;
+}
+.chapter__num::before { content: none; }
+.chapter__head > .label { grid-column: 5 / 13; }
+.chapter__head h2 {
+  grid-column: 5 / 13; margin-top: 10px; max-width: none;
+  font: 800 clamp(38px, 5.6vw, 92px)/.95 var(--s-font) !important; letter-spacing: -.03em !important;
+}
+.inshort {
+  grid-column: 5 / 12; margin-top: clamp(24px, 3vw, 40px); padding: 0; border: 0; max-width: 34ch;
+  font: 600 clamp(21px, 2.2vw, 30px)/1.25 var(--s-font) !important; font-style: normal; color: var(--s-ink);
+}
+.inshort .label { color: var(--s-red); margin-bottom: 10px; }
+
+/* body text: columns 5 to 11 of the 12-column grid */
+.prose { margin-left: calc((100% + var(--s-gap)) / 12 * 4); max-width: 68ch; font: 400 18px/1.65 var(--s-font); }
+.chapter__head + .prose > p:first-child::first-letter { float: none; margin: 0; font: inherit; color: inherit; }
+.h3, .prose .h3 { font: 800 clamp(24px, 2.4vw, 34px)/1.1 var(--s-font); letter-spacing: -.02em; }
+.rq {
+  margin: 1.6em 0 !important; padding: 20px 0 0; border-top: var(--s-rule) solid var(--s-red); border-bottom: 0;
+  text-align: left; font: 800 clamp(26px, 3vw, 44px)/1.08 var(--s-font) !important; font-style: normal; letter-spacing: -.02em;
+}
+.rq .label { color: var(--s-red); margin-bottom: 12px; }
+.plain li::before { width: 12px; height: 4px; top: .6em; background: var(--s-red); }
+
+/* asides: a thick red rule instead of a box */
+.aside, .limits {
+  margin-left: calc((100% + var(--s-gap)) / 12 * 4); max-width: 68ch;
+  background: transparent; border: 0; border-left: var(--s-rule) solid var(--s-red); padding: 4px 0 4px 28px;
+}
+.aside h3 { font: 800 clamp(24px, 2.4vw, 32px)/1.1 var(--s-font); letter-spacing: -.02em; }
+.aside p, .limits p { font: 400 17px/1.65 var(--s-font); }
+.limits__lead { font: 700 clamp(20px, 2vw, 26px)/1.3 var(--s-font) !important; }
+.aside .label, .limits .label { color: var(--s-red); }
+
+.dims { border-top: 4px solid var(--s-ink); }
+.dims div { border-bottom: 2px solid var(--s-ink); }
+.dims dt { font: 800 20px/1.3 var(--s-font); }
+.dims dd { font: 400 17px/1.5 var(--s-font); }
+
+/* oversized key numbers (method) */
+.sw-stats {
+  margin: clamp(48px, 7vw, 88px) 0 0 calc((100% + var(--s-gap)) / 12 * 4);
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(var(--s-gap) * 1.5); border-top: var(--s-rule) solid var(--s-ink); padding-top: 18px;
+}
+.sw-stats b { display: block; font: 800 clamp(52px, 6.4vw, 112px)/.85 var(--s-font); letter-spacing: -.05em; color: var(--s-ink); }
+.sw-stats div:first-child b { color: var(--s-red); }
+.sw-stats span { display: block; margin-top: 12px; font: 600 12px/1.4 var(--s-font); letter-spacing: .14em; text-transform: uppercase; }
+
+@media (max-width: 860px) {
+  .chapter__head { grid-template-columns: 1fr; }
+  .chapter__num, .chapter__head > .label, .chapter__head h2, .inshort { grid-column: 1; grid-row: auto; }
+  .chapter__num { margin-bottom: 14px; }
+  .prose, .aside, .limits, .sw-stats { margin-left: 0; }
+  .sw-stats { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* Georgian: one-weight font, so headings get a fine outline and more line height */
+:lang(ka) .chapter__head h2 { -webkit-text-stroke: 1.3px currentColor; letter-spacing: .01em !important; line-height: 1.15 !important; }
+:lang(ka) .inshort { -webkit-text-stroke: .6px currentColor; line-height: 1.45 !important; }
+:lang(ka) .rq { -webkit-text-stroke: .9px currentColor; line-height: 1.35 !important; letter-spacing: 0; }
+:lang(ka) .h3, :lang(ka) .aside h3, :lang(ka) .dims dt { -webkit-text-stroke: .7px currentColor; line-height: 1.3; letter-spacing: 0; }
+:lang(ka) .limits__lead { -webkit-text-stroke: .5px currentColor; line-height: 1.5 !important; }
+:lang(ka) .sw-stats span { letter-spacing: .04em; -webkit-text-stroke: .35px currentColor; }
