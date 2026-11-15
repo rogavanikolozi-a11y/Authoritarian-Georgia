@@ -310,3 +310,152 @@ html:lang(ka) { font-synthesis: none; }
 :lang(ka) .sw-cp h3, :lang(ka) .finding__body h3, :lang(ka) .about__head h2, :lang(ka) .sw-foot-name { -webkit-text-stroke: 1px currentColor; letter-spacing: 0 !important; line-height: 1.2 !important; }
 :lang(ka) .deep__head h3, :lang(ka) .pull p { -webkit-text-stroke: 1.1px currentColor; letter-spacing: 0 !important; line-height: 1.25 !important; }
 :lang(ka) .bio, :lang(ka) .cv__what { -webkit-text-stroke: .5px currentColor; line-height: 1.5; }
+
+/* ---------- 15. Charts, maps and diagrams in the Swiss palette ----------
+   Same structure and data as before; only colour, rules and type change.
+   General charts: black + Swiss red (red = Georgia / the key element).
+   Maps: EU blue for Europe, Swiss red for Russia, plum (between the two) for Georgia,
+   Belarus in its flag green, Hungary hatched in its flag red over EU blue. */
+:root { --s-eu: #003399; --s-ge: #721D56; --s-by: #2F8A4C; --s-hu: #CE2939; --s-mid: #8C8C88; }
+:root[data-theme="dark"] { --s-eu: #5C82F0; --s-ge: #C65A9E; --s-by: #4FB46C; --s-hu: #F0505F; --s-mid: #8A8A86; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s-eu: #5C82F0; --s-ge: #C65A9E; --s-by: #4FB46C; --s-hu: #F0505F; --s-mid: #8A8A86; } }
+
+#figTimeline, #figTypes, #figBank, #figTri, #figLenses, #mapScrolly, #figMatrix, #cpScrolly,
+#figLaw, #figFlow, #expertCards, .finding__fig, #figGeorgia, #corpusBox {
+  --ge: var(--s-red); --ru: var(--s-ink); --eu: var(--s-eu); --gold: var(--s-red);
+  --serif: var(--s-font); --sans: var(--s-font);
+}
+#mapScrolly, #figGeorgia { --ge: var(--s-ge); --ru: var(--s-red); }
+
+/* figure titles and captions */
+.fig__title { border-bottom: 4px solid var(--s-ink); font-style: normal; font-weight: 700; letter-spacing: -.01em; }
+.fig__title .label { font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--s-red); }
+.fig figcaption, .finding__fig figcaption { border-top: 2px solid var(--s-ink); }
+:lang(ka) .fig__title { -webkit-text-stroke: .5px currentColor; }
+
+/* Diagram A: three ways */
+.type { border-top: 4px solid var(--s-ink); }
+.type--key { border-top: 8px solid var(--s-red); }
+.s { stroke-width: 2; } .s.k { stroke-width: 2.6; }
+.type h3 { font-weight: 700; letter-spacing: -.01em; }
+.type__tag { font: 800 12px/1.3 var(--s-font) !important; letter-spacing: .1em; text-transform: uppercase; }
+
+/* Diagram B: bank run (open opponents and hidden doubts in red) */
+.pp.is-out .pp__body { fill: var(--paper); stroke: var(--s-red); stroke-width: 2; }
+.pp__priv { fill: var(--s-red); }
+.pp__ring { stroke: var(--s-red); stroke-width: 2; }
+#figBank .lg--out { border-color: var(--s-red) !important; }
+#figBank .lg--dot { background: var(--s-red) !important; }
+.bank__count { font-weight: 700; color: var(--s-ink); }
+#figBank .btn, #figMatrix .btn { border: 2px solid var(--s-ink); border-radius: 0; font-weight: 700; }
+#figBank .btn--solid { background: var(--s-red); border-color: var(--s-red); color: #fff; }
+#figBank .btn--solid:hover { background: var(--s-ink); border-color: var(--s-ink); color: var(--paper); }
+
+/* Diagram C: three methods (labels kept inside their circle) */
+.tri__c { stroke-width: 2; }
+.tri__lab b { font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -.03em; }
+.tri__lab span { max-width: 92px; font-size: 11px; }
+.tri__lab--1 { left: 26.5%; top: 29%; } .tri__lab--2 { left: 73.5%; top: 29%; } .tri__lab--3 { left: 50%; top: 81%; }
+
+/* Five lenses and the law flow: the last step in red */
+.lens { border-top: 4px solid var(--s-ink); }
+.lens::before { border: 2px solid var(--s-ink); font-weight: 700; }
+.lens:last-child::before { background: var(--s-red); border-color: var(--s-red); color: #fff; }
+.lens h3, .flow h4 { font-weight: 700; letter-spacing: -.01em; }
+.flow li { border-top-color: var(--s-ink); }
+.flow li:nth-child(5) { border-top-color: var(--s-red); }
+@media (max-width: 860px) { .flow li:nth-child(5) { border-left-color: var(--s-red); } }
+
+/* matrix */
+.mx thead th { font-weight: 700; color: var(--s-ink); border-bottom: 4px solid var(--s-ink); }
+.mx thead th:last-child { color: var(--s-red); }
+.mx th, .mx td { border-bottom-width: 2px; }
+.mx tbody th { font-weight: 700; letter-spacing: -.01em; }
+.dot--1 { border-width: 2px; } .dot--0 { border-width: 2px; }
+.mx td:last-child .dot--1 { border-color: var(--s-red); background: linear-gradient(90deg, var(--s-red) 50%, transparent 50%); }
+
+/* 04.2 checkpoints: current bar red, passed bars black, coming bars outlined */
+.cp-panel { border-top: 4px solid var(--s-ink); border-bottom: 2px solid var(--s-ink); }
+.cp-date { font-weight: 800; letter-spacing: -.04em; }
+.cp-title, .cp-step__card h3 { font-weight: 700; }
+.meter__bars i { border-width: 2px; }
+.meter__bars i.on { background: var(--s-ink); border-color: var(--s-ink); }
+.meter__bars i.on:not(:has(+ i.on)) { background: var(--s-red); border-color: var(--s-red); }
+.quote { border-left: 6px solid var(--s-red); }
+
+/* maps */
+.c--eu, .hatch-bg { fill: color-mix(in srgb, var(--s-eu) 30%, var(--paper)); }
+.c--ru { fill: color-mix(in srgb, var(--s-red) 82%, var(--land)); }
+.c--by { fill: color-mix(in srgb, var(--s-by) 70%, var(--land)); }
+.hatch-line { stroke: var(--s-hu); stroke-width: 2; }
+.mlabel--eu { fill: var(--s-eu); }
+#mapScrolly .lg--eu { background: color-mix(in srgb, var(--s-eu) 30%, var(--paper)); }
+#mapScrolly .lg--ref { background: linear-gradient(90deg, color-mix(in srgb, var(--s-red) 82%, var(--land)) 0 34%, color-mix(in srgb, var(--s-by) 70%, var(--land)) 34% 67%, var(--s-hu) 67%); }
+.step[data-id="belarus"] .step__tag { color: var(--s-by); }
+.step[data-id="hungary"] .step__tag { color: var(--s-hu); }
+.step__card { border-top: 4px solid var(--s-ink); }
+.step__card h3 { font-weight: 700; }
+.ge-land { stroke-width: 2.2; }
+
+/* law table: FARA grey, Russia black, Georgia red, all heavy rules */
+.law thead th { font-weight: 700; border-top: 6px solid var(--s-mid); border-bottom: 2px solid var(--s-ink); }
+.law thead th:first-child { border-top-color: transparent; }
+.law thead th:nth-child(3) { border-top-color: var(--s-ink); }
+.law thead th:nth-child(4) { border-top-color: var(--s-red); color: var(--s-red); }
+@media (max-width: 760px) { .law td { border-left-color: var(--s-mid); } .law td:nth-of-type(2) { border-left-color: var(--s-ink); } .law td:nth-of-type(3) { border-left-color: var(--s-red); } }
+
+/* expert cards */
+.card { border-top: 4px solid var(--s-ink); }
+.card summary::after { color: var(--s-red); font-weight: 700; }
+.card[open] { border-top-color: var(--s-red); }
+.card__name { font-weight: 700; }
+.card__date { font-weight: 700; color: var(--s-ink); }
+
+/* findings figures: adaptation table, playbook, trade-off */
+.adapt th { font-weight: 800; color: var(--s-ink); border-bottom: 4px solid var(--s-ink); }
+.adapt th:last-child { color: var(--s-red); }
+.adapt td { font-weight: 600; border-bottom-width: 2px; }
+.adapt path, .pb__arrow path { stroke-width: 2; }
+.pb__word { font-weight: 700; letter-spacing: -.02em; }
+.pb__rows::after { border-width: 3px; border-color: var(--s-ink); }
+.pb__row { border-bottom-width: 2px; }
+.trade { border-top: 4px solid var(--s-ink); border-bottom: 2px solid var(--s-ink); }
+.trade__side--cost .label { color: var(--s-red); }
+.trade__beam path, .trade__beam rect { stroke-width: 2; }
+.trade__beam rect:last-child { fill: var(--s-red); stroke: var(--s-red); }
+.trade li { font-weight: 600; }
+
+/* ---------- 16. Red #law band: figures sit on it as white sheets with room to breathe ---------- */
+.deep .fig { padding: clamp(24px, 3.4vw, 48px); border-top: 10px solid #111; box-shadow: 0 18px 0 -8px rgb(0 0 0 / .18); }
+.deep .fig + .fig { margin-top: clamp(48px, 6vw, 80px); }
+.deep .fig figcaption { color: var(--ink-2); }
+.deep .prose { margin-bottom: clamp(32px, 4vw, 56px); }
+
+/* ---------- 17. Big chapter numbers with a decimal (04.1-04.3): smaller so they never touch the title ---------- */
+#regimes .chapter__num, #checkpoints .chapter__num, #experts .chapter__num { font-size: clamp(60px, 8vw, 138px) !important; }
+.chapter__head { column-gap: calc(var(--s-gap) * 1.5); }
+
+/* ---------- 18. Contents sidebar: keep text and rule inside the margin ---------- */
+@media (min-width: 1280px) {
+  :root { --toc: 280px; }
+  .dots { width: calc(var(--toc) - var(--gut) - 32px); }
+  .dots a span { overflow-wrap: anywhere; }
+}
+
+/* ---------- 19. Footer buttons stay white on the black block (light and dark) ---------- */
+.foot .btn, .foot .btn--quiet { border-color: #F5F5F2 !important; color: #F5F5F2 !important; background: transparent !important; }
+.foot .btn:hover { background: #F5F5F2 !important; color: #111 !important; }
+.foot .copied { color: #F5F5F2; }
+
+/* ---------- 20. Georgian hero: the title stops before the red circle ---------- */
+@media (min-width: 761px) {
+  .hero__titleblock { padding-right: calc(min(31vw, 450px) + 32px); }
+  :lang(ka) .hero__title { font-size: clamp(40px, 6vw, 96px) !important; max-width: none; }
+}
+
+/* ---------- 21. Body text fills the left columns: columns 1 to 10 of 12 ---------- */
+@media (min-width: 861px) {
+  .prose, .aside, .limits, .sw-stats, .sw-corpus-label { margin-left: 0; max-width: calc((100% + var(--s-gap)) / 12 * 10 - var(--s-gap)); }
+  .prose { font-size: 20px; }
+  .aside p, .limits p { font-size: 18px; }
+}
