@@ -21,9 +21,10 @@
 <style>
   /* Georgian page: Noto Serif Georgian for Georgian letters, the usual fonts for Latin */
   @font-face { font-family: "Noto Serif Georgian"; src: url("../fonts/noto-serif-georgian-georgian-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F; }
+  @font-face { font-family: "BPG Typewriter A"; src: url("../fonts/bpg-typewriter-a.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F; }
   :root {
-    --serif: "Newsreader", "Noto Serif Georgian", Georgia, serif;
-    --sans: "IBM Plex Sans", "Noto Serif Georgian", system-ui, sans-serif;
+    --serif: "Newsreader", "BPG Typewriter A", "Noto Serif Georgian", Georgia, serif;
+    --sans: "IBM Plex Sans", "BPG Typewriter A", "Noto Serif Georgian", system-ui, sans-serif;
   }
   .hero__title { font-size: clamp(38px, min(6.4vw, 11vh), 92px); line-height: 1.08; letter-spacing: -.01em; max-width: 16ch; }
   .chapter__head h2 { letter-spacing: 0; line-height: 1.15; font-size: clamp(32px, 4.2vw, 56px); }
@@ -33,6 +34,10 @@
   .finding { grid-template-columns: var(--off) minmax(0, 1fr); padding-bottom: 40px; }
   .finding__n { font-size: clamp(56px, 7vw, 96px); }
   .more { margin-top: 28px; }
+  /* BPG Typewriter has no italic, so keep Georgian text upright */
+  .rq, .hero__title em, .pole__mark b, .fig__title, .inshort { font-style: normal; }
+  .rq::first-letter { all: unset; }
+  .chapter__head + .prose > p.rq::first-letter { float: none; font: inherit; color: inherit; margin: 0; }
 </style>
 </head>
 <body>
