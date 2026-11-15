@@ -35,6 +35,7 @@
   .finding { grid-template-columns: var(--off) minmax(0, 1fr); padding-bottom: 40px; }
   .finding__n { font-size: clamp(56px, 7vw, 96px); }
   .more { margin-top: 28px; }
+  .finding__fig { grid-column: 2 / -1; margin-top: 32px; }
   /* BPG Typewriter has only one thin weight: thicken it slightly and darken grey text */
   body { -webkit-text-stroke: .45px currentColor; }
   .hero__title, .chapter__head h2, .about__head h2 { -webkit-text-stroke: 1.1px currentColor; }
@@ -78,7 +79,7 @@
   </div>
   <nav class="bar__nav" aria-label="საიტი">
     <a class="bar__lang" href="../" lang="en" hreflang="en">EN</a>
-    <button class="theme" id="themeToggle" type="button" aria-pressed="false"><span id="themeLabel">მუქი</span></button>
+    <button class="theme" id="themeToggleKa" type="button" aria-pressed="false"><span id="themeLabelKa">მუქი</span></button>
   </nav>
 </header>
 
@@ -102,7 +103,7 @@
 <section class="hero" id="hero" data-section="hero">
   <div class="hero__inner">
     <p class="hero__meta"><span>ტარტუს უნივერსიტეტი</span><span>იოჰან სკიტეს პოლიტიკურ მეცნიერებათა ინსტიტუტი</span><span>სამაგისტრო ნაშრომი · 2026</span></p>
-    <p class="ai-note">ქართული თარგმანი შესრულებულია ხელოვნური ინტელექტის დახმარებით და შესაძლოა მცირე უზუსტობებს შეიცავდეს. ციტატები ინგლისურიდანაა თარგმნილი. რუკები და დიაგრამები იხილეთ <a href="../">ინგლისურ ვერსიაში</a>.</p>
+    <p class="ai-note">ქართული თარგმანი შესრულებულია ხელოვნური ინტელექტის დახმარებით და შესაძლოა მცირე უზუსტობებს შეიცავდეს. ციტატები ინგლისურიდანაა თარგმნილი. რუკები და დიაგრამები ინგლისურ ენაზეა.</p>
 
     <div class="hero__titleblock">
       <h1 class="hero__title">ბრიუსელსა <em>და</em> მოსკოვს შორის</h1>
@@ -152,6 +153,23 @@
     <p class="rq"><span class="label">საკვლევი კითხვა</span>როგორ დაეხმარა ავტორიტარული სწავლა „ქართულ ოცნებას“ ძალაუფლების კონსოლიდაციაში 2022 წლის შემდეგ?</p>
     <p>„ავტორიტარული სწავლა“ ნიშნავს, რომ მმართველები სწავლობენ, რა გაამართლა და რა ჩავარდა სხვა მმართველებთან, და ამის მიხედვით იცვლიან ქცევას. შემდეგი თავი ამ იდეას განმარტავს.</p>
   </div>
+<figure class="fig fig--wide" id="figTimeline">
+    <div class="tl" id="timeline"></div>
+    <div class="tl__pole">
+      <div class="pole pole--fig" id="tlPole" style="--p:.2;--f:.2">
+        <span class="pole__end pole__end--w">Brussels</span>
+        <span class="pole__track">
+          <span class="pole__formal"><i></i><b>official line</b></span>
+          <span class="pole__mark"><i></i><b>actual course</b></span>
+        </span>
+        <span class="pole__end pole__end--e">Moscow</span>
+      </div>
+    </div>
+    <figcaption>
+      <strong>Georgia, 2003 to 2024.</strong> Select an event to move the needle. The ring is the government’s official line on EU membership. The solid marker is where its language and laws pointed. The positions are illustrative: they show the direction the thesis describes, not a measurement.
+    </figcaption>
+  </figure>
+
 </section>
 
 <!-- 02 -->
@@ -179,6 +197,63 @@
     <p>ჰოლი ბანკიდან ფულის მასობრივი გატანის მაგალითს იყენებს. ბანკი შეიძლება გაკოტრდეს მაშინაც კი, როცა ფული აქვს, მხოლოდ იმიტომ, რომ ადამიანებს სჯერათ, რომ ყველა დანარჩენი ფულის გატანას აპირებს. რეჟიმიც ასე მუშაობს. ის სტაბილურია მანამ, სანამ ადამიანებს სჯერათ, რომ ძლიერია და დასჯა შეუძლია.</p>
     <p>ტიმურ კურანმა ამის ფარულ ნაწილს „პრეფერენციების ფალსიფიკაცია“ უწოდა: ადამიანები საჯაროდ მხარს უჭერენ სისტემას, რომელსაც პირადად ეწინააღმდეგებიან, რადგან შედეგების ეშინიათ. ეს რეჟიმს უფრო მყარად წარმოაჩენს, ვიდრე სინამდვილეშია. დაუმორჩილებლობის ერთმა ხილულმა აქტმა შეიძლება შემდეგი ადამიანისთვის ზღვარი დაწიოს, შემდეგ კი მომდევნოსთვისაც. ეს ჯაჭვური ეფექტია. ავტორიტარული სწავლა, არსებითად, ნაპერწკლების დროულად შემჩნევა და ჩაქრობაა.</p>
   </div>
+<figure class="fig fig--wide" id="figTypes">
+    <p class="fig__title"><span class="label">Diagram A</span>Three ways regimes learn</p>
+    <ol class="types">
+      <li class="type">
+        <svg viewBox="0 0 220 84" role="img" aria-label="A solid arrow carries a shape from one regime to another, where it is slightly altered.">
+          <rect class="s" x="14" y="22" width="40" height="40"/>
+          <path class="s draw" d="M62 42H150"/><path class="s" d="M143 35l8 7-8 7"/>
+          <path class="s" d="M166 22h30l10 10v30h-40z"/>
+        </svg>
+        <h3>Policy transfer</h3>
+        <p>A regime deliberately adopts a specific law or practice from another. The choice is intentional and usually selective: only the parts that seem to work.</p>
+      </li>
+      <li class="type">
+        <svg viewBox="0 0 220 84" role="img" aria-label="One regime watches another from a distance. There is no line of contact, only ripples.">
+          <circle class="s" cx="34" cy="42" r="20"/>
+          <path class="s dash" d="M66 24a26 26 0 0 1 0 36"/><path class="s dash" d="M84 14a40 40 0 0 1 0 56"/><path class="s dash" d="M102 6a52 52 0 0 1 0 72"/>
+          <circle class="s" cx="186" cy="42" r="20"/><circle class="f" cx="186" cy="42" r="4"/>
+        </svg>
+        <h3>Diffusion</h3>
+        <p>A regime sees what kept others in power and imitates it. There is no coordination, and sometimes no clear understanding of why it worked.</p>
+      </li>
+      <li class="type type--key">
+        <svg viewBox="0 0 220 84" role="img" aria-label="A large centre with arrows pointing outwards to three smaller regimes.">
+          <circle class="s k" cx="60" cy="42" r="26"/><circle class="f k" cx="60" cy="42" r="5"/>
+          <path class="s k draw" d="M90 30L150 14"/><path class="s k draw" d="M92 42H160"/><path class="s k draw" d="M90 54L150 70"/>
+          <circle class="s" cx="166" cy="11" r="9"/><circle class="s" cx="176" cy="42" r="9"/><circle class="s" cx="166" cy="73" r="9"/>
+        </svg>
+        <h3>Promotion</h3>
+        <p>A dominant regime actively shapes how others behave, through support, pressure or example. It mirrors democracy promotion. Hall calls Russia the “authoritarian gravity center” of the post-Soviet space.</p>
+        <p class="type__tag">Most relevant to Georgia</p>
+      </li>
+    </ol>
+    <figcaption>After Hall and Ambrosio (2017). The three types overlap in practice.</figcaption>
+  </figure>
+<figure class="fig fig--wide" id="figBank">
+    <p class="fig__title"><span class="label">Diagram B</span>The bank run</p>
+    <div class="bank" id="bank">
+      <div class="bank__stage" id="bankStage" role="img" aria-label="Thirty figures stand in a row. All of them back the regime in public, but most of them privately oppose it."></div>
+      <p class="bank__count" id="bankCount" aria-hidden="true"></p>
+      <p class="bank__status" id="bankStatus" aria-live="polite">Everyone backs the regime in public. Most do not mean it.</p>
+      <div class="bank__ctrl">
+        <button class="btn btn--solid" type="button" id="bankPlay">Play the cascade</button>
+        <button class="btn" type="button" id="bankLearn">Remove the spark</button>
+        <button class="btn btn--quiet" type="button" id="bankReset">Reset</button>
+      </div>
+      <ul class="legend">
+        <li><span class="lg lg--fill"></span>Backs the regime in public</li>
+        <li><span class="lg lg--out"></span>Opposes it openly</li>
+        <li><span class="lg lg--dot"></span>Privately opposes it</li>
+      </ul>
+    </div>
+    <figcaption>A simplified illustration of the logic in Hall (2023) and Kuran (1995). The number of figures is arbitrary. Authoritarian learning is, at its core, the work of spotting sparks and putting them out early.</figcaption>
+    <details class="textver"><summary>Text version</summary>
+      <p>Thirty people publicly support a regime. Twenty-two of them privately oppose it but stay silent out of fear. When one person defies the regime openly, the next finds it easier, and then the next. Within moments all twenty-two stand in open opposition, and only eight loyalists remain. If the regime removes the first person before anyone sees the act, nothing happens: everyone keeps up the appearance of support.</p>
+    </details>
+  </figure>
+
 
   <aside class="aside">
     <p class="label">შენიშვნა</p>
@@ -216,6 +291,47 @@
       <div><dt>ექსპერტებთან ინტერვიუები</dt><dd>ცხრა ნახევრად სტრუქტურირებული ინტერვიუ 2026 წლის მარტსა და აპრილში, ექვსი ქართულად და სამი ინგლისურად. ისინი დისკურსის ჩემეულ ინტერპრეტაციას ამოწმებენ და აზუსტებენ.</dd></div>
     </dl>
   </div>
+<figure class="fig fig--wide" id="figTri">
+    <p class="fig__title"><span class="label">Diagram C</span>Three methods, one synthesis</p>
+    <div class="tri-wrap">
+      <div class="tri">
+        <svg class="tri__svg" viewBox="0 0 600 420" aria-hidden="true">
+          <defs>
+            <clipPath id="triA"><circle cx="210" cy="150" r="128"/></clipPath>
+            <clipPath id="triB" clip-path="url(#triA)"><circle cx="390" cy="150" r="128"/></clipPath>
+          </defs>
+          <circle class="tri__core" cx="300" cy="278" r="128" clip-path="url(#triB)"/>
+          <circle class="tri__c" cx="210" cy="150" r="128"/>
+          <circle class="tri__c" cx="390" cy="150" r="128"/>
+          <circle class="tri__c" cx="300" cy="278" r="128"/>
+        </svg>
+        <div class="tri__lab tri__lab--1"><b data-count="386">386</b><span>direct quotes</span></div>
+        <div class="tri__lab tri__lab--2"><b data-count="3">3</b><span>reference regimes</span></div>
+        <div class="tri__lab tri__lab--3"><b data-count="9">9</b><span>expert interviews</span></div>
+      </div>
+      <p class="tri__note"><span class="lg lg--ge"></span>Synthesis: what the three methods show together</p>
+    </div>
+    <ol class="tri__list">
+      <li>
+        <h3>Critical Discourse Analysis</h3>
+        <p>386 direct quotes from two prime ministers, Irakli Gharibashvili and Irakli Kobakhidze, as published by Radio Tavisupleba (Radio Liberty). I used the Discourse-Historical Approach of Wodak and Meyer. Radio Tavisupleba is independent of every Georgian party and prints direct quotations, which reduces the risk of media bias.</p>
+      </li>
+      <li>
+        <h3>Review of secondary literature</h3>
+        <p>Peer-reviewed research on Russia, Belarus and Hungary. These three are reference points for recognising patterns. They are not full comparative cases.</p>
+      </li>
+      <li>
+        <h3>Expert interviews</h3>
+        <p>Nine semi-structured interviews in March and April 2026, six in Georgian and three in English. They test and correct my reading of the discourse.</p>
+      </li>
+    </ol>
+  </figure>
+<figure class="fig fig--wide" id="figLenses">
+    <p class="fig__title"><span class="label">Diagram D</span>The five lenses of the Discourse-Historical Approach</p>
+    <ol class="lenses" id="lenses"></ol>
+    <figcaption>After Wodak and Meyer (2009). The fifth lens, intensification, is why the analysis follows four moments in time.</figcaption>
+  </figure>
+
   <aside class="limits">
     <p class="label">რას ვერ აჩვენებს ეს მეთოდი</p>
     <p class="limits__lead">ავტორიტარული სწავლის დანახვა რთულია. ის არაფორმალური არხებითა და ელიტების დახურული ქსელებით ვრცელდება. არცერთი დოკუმენტი არ ამბობს, საიდან მოვიდა ესა თუ ის ტაქტიკა.</p>
@@ -233,8 +349,33 @@
   </header>
   <div class="prose">
     <p>სწავლის ამოსაცნობად ჯერ უნდა იცოდე, რისი სწავლა შეიძლება. მიმოვიხილე კვლევები სამი რეჟიმის შესახებ, რომელთა მეთოდებიც კარგად არის დოკუმენტირებული. რუსეთი, ბელარუსი და უნგრეთი ამ ნაშრომში საორიენტაციო წერტილებია და არა სრული შედარებითი შემთხვევები. რუკაზე ასახული ხაზები საერთო რეპერტუარს აღნიშნავს, რომელსაც ნაშრომი ავლენს. ისინი მითითებების მტკიცებულება არ არის.</p>
-    <p>ერთმანეთის გვერდით დაწყობისას ნარატივები მეორდება. დეტალური რუკა და ნარატივების ცხრილი ხელმისაწვდომია <a href="../#regimes">ინგლისურ ვერსიაში</a>.</p>
+    <p>ერთმანეთის გვერდით დაწყობისას ნარატივები მეორდება. რუკა და ნარატივების ცხრილი ქვემოთაა (ინგლისურად).</p>
   </div>
+<div class="scrolly scrolly--map" id="mapScrolly">
+    <figure class="scrolly__graphic" id="figMap">
+      <div class="map" id="map" role="group" aria-label="Map of Europe and the post-Soviet space. Russia, Belarus, Hungary and Georgia are highlighted. Brussels and Moscow are marked."></div>
+      <ul class="legend legend--map">
+        <li><span class="lg lg--eu"></span>EU member states</li>
+        <li><span class="lg lg--ref"></span>Reference regimes</li>
+        <li><span class="lg lg--ge"></span>Georgia</li>
+        <li><span class="lg lg--arc"></span>Documented cooperation</li>
+        <li><span class="lg lg--arcd"></span>Shared repertoire, inferred</li>
+      </ul>
+    </figure>
+    <div class="scrolly__steps" id="mapSteps"></div>
+  </div>
+<figure class="fig fig--wide" id="figMatrix">
+    <p class="fig__title"><span class="label">Narrative matrix</span>Which narrative appears where</p>
+    <div class="matrix" id="matrix"></div>
+    <p class="matrix__note" id="matrixNote" aria-live="polite">Select a dot to read the note for that country.</p>
+    <ul class="legend">
+      <li><span class="dot dot--2"></span>Documented in the thesis</li>
+      <li><span class="dot dot--1"></span>Foundations only</li>
+      <li><span class="dot dot--0"></span>Not documented in the thesis</li>
+    </ul>
+    <figcaption>An empty dot means the thesis does not document the narrative for that country. It does not mean the narrative is absent there.</figcaption>
+    <details class="textver"><summary>Text version</summary><div id="matrixText"></div></details>
+  </figure>
 </section>
 
 <!-- 04.2 -->
@@ -272,6 +413,14 @@
     <p>პროტესტს „ნაცმაიდანს“ არქმევენ, რაც „ერთიანი ნაციონალური მოძრაობის“ სახელისა და უკრაინის ევრომაიდანის ნაზავია. პროტესტის ახალი წესები, მაგალითად, სახის დაფარვის აკრძალვა, გადაუდებლად წარმოჩინდება. პრემიერ-მინისტრი აცხადებს, რომ მთავრობა ოპოზიციური პარტიების აკრძალვას გეგმავს.</p>
     <blockquote class="quote"><p>„გარდა იმისა, რომ ამ „ნაცმაიდანის“ ორგანიზების მცდელობაში უცხოური დაფინანსება იყო ჩართული, ეს ჩართულობა აბსოლუტურად კოორდინირებულიც იყო.“</p><footer>ირაკლი კობახიძე, 3 დეკემბერი, 2024. პროტესტების შესახებ</footer></blockquote>
   </div>
+  <div class="prose"><p class="label">ინტერაქტიული ვერსია (ინგლისურად)</p></div>
+<div class="scrolly scrolly--cp" id="cpScrolly">
+    <div class="scrolly__graphic">
+      <div class="cp-panel" id="cpPanel" aria-hidden="true"></div>
+    </div>
+    <div class="scrolly__steps" id="cpSteps"></div>
+  </div>
+
 
   <div class="deep" id="law">
     <header class="deep__head">
@@ -280,9 +429,19 @@
     </header>
     <div class="prose">
       <p>თუ სწავლა სადმე კვალს ტოვებს, ეს კანონშია. დოკუმენტების შედარება საუბრების შედარებაზე მარტივია. ჩემ მიერ გამოკითხულმა რამდენიმე ექსპერტმა „უცხოური აგენტების კანონს“ ლაკმუსის ტესტი უწოდა.</p>
-      <p>მმართველი პარტია ამბობდა, რომ კანონი ამერიკული უცხოური აგენტების რეგისტრაციის აქტის (FARA) ასლი იყო. რუსეთიც საკუთარ კანონს ზუსტად იგივე შედარებით იცავდა. ნაშრომი სამივეს გვერდიგვერდ ადარებს; შედარებითი ცხრილი იხილეთ <a href="../#law">ინგლისურ ვერსიაში</a>.</p>
+      <p>მმართველი პარტია ამბობდა, რომ კანონი ამერიკული უცხოური აგენტების რეგისტრაციის აქტის (FARA) ასლი იყო. რუსეთიც საკუთარ კანონს ზუსტად იგივე შედარებით იცავდა. ნაშრომი სამივეს გვერდიგვერდ ადარებს (ცხრილი ქვემოთაა, ინგლისურად).</p>
       <p>კანონს ეფექტის მისაღწევად არავის აკრძალვა ან დაპატიმრება არ სჭირდება. მისი პირველი ფუნქცია სიმბოლურია.</p>
     </div>
+<figure class="fig fig--wide" id="figLaw">
+      <p class="fig__title"><span class="label">Comparison</span>FARA, Russia’s law and Georgia’s law</p>
+      <div class="lawtable" id="lawTable"></div>
+      <figcaption>Cells marked <span class="reading">reading</span> are interpretation, mine or an interviewee’s. The rest is reported from the sources the thesis cites.</figcaption>
+    </figure>
+<figure class="fig fig--wide" id="figFlow">
+      <ol class="flow" id="lawFlow"></ol>
+      <figcaption>Based on the interviews with Lia Gurchiani and Anastasya Zavyalova and on the thesis’s synthesis.</figcaption>
+    </figure>
+
   </div>
 </section>
 
@@ -308,6 +467,8 @@
       <footer>გია ნოდია, პერიფრაზი. ინტერვიუ, 30 მარტი, 2026</footer>
     </blockquote>
   </div>
+<div class="cards" id="expertCards"></div>
+
   <div class="split">
     <div>
       <h3 class="h3">რაზე შეთანხმდნენ</h3>
@@ -341,6 +502,17 @@
         <p>„ქართულ ოცნებას“ ინსტრუმენტები ნულიდან არ შეუქმნია. მან სხვაგან უკვე გამოცდილი ინსტრუმენტები მოარგო. ამან წარუმატებლობის რისკი შეამცირა და კონსოლიდაცია დააჩქარა.</p>
         <p>„უცხოური აგენტების კანონი“ ყველაზე მკაფიო მაგალითია: სამართლებრივი და რიტორიკული მოდელი, რომელიც უკვე გამოიყენებოდა რუსეთში, იმავე არგუმენტებით დაიცვეს და შემდეგ მსგავსი აქტორების წინააღმდეგ გამოიყენეს.</p>
       </div>
+<figure class="finding__fig">
+        <table class="adapt">
+          <thead><tr><th scope="col">Tested elsewhere</th><th aria-hidden="true"></th><th scope="col">Adapted at home</th></tr></thead>
+          <tbody>
+            <tr><td>Russia’s foreign agents framework, 2012</td><td class="adapt__arrow" aria-hidden="true"><svg viewBox="0 0 60 12"><path class="draw" d="M0 6H56"/><path d="M50 1l6 5-6 5"/></svg></td><td>Two Foreign Agents bills, 2023 and 2024</td></tr>
+            <tr><td>The defence: “transparency” and the FARA comparison</td><td class="adapt__arrow" aria-hidden="true"><svg viewBox="0 0 60 12"><path class="draw" d="M0 6H56"/><path d="M50 1l6 5-6 5"/></svg></td><td>The same two arguments</td></tr>
+            <tr><td>The targets: NGOs, then media</td><td class="adapt__arrow" aria-hidden="true"><svg viewBox="0 0 60 12"><path class="draw" d="M0 6H56"/><path d="M50 1l6 5-6 5"/></svg></td><td>NGOs, media and watchdogs</td></tr>
+          </tbody>
+        </table>
+      </figure>
+
     </li>
     <li class="finding">
       <p class="finding__n" aria-hidden="true">2</p>
@@ -348,6 +520,11 @@
         <h3>ლეგიტიმაციის ენის სახელმძღვანელო</h3>
         <p>მხოლოდ ძალა საკმარისი არ იყო. მმართველ პარტიას სჭირდებოდა სიტყვები, რომლებიც მის გადაწყვეტილებებს გონივრულად წარმოაჩენდა. ავტორიტარულმა სწავლამ ესეც მისცა: არა მხოლოდ რა უნდა გაეკეთებინა, არამედ როგორ უნდა გაემართლებინა.</p>
       </div>
+<figure class="finding__fig finding__fig--full" id="figPlaybook">
+        <p class="fig__title"><span class="label">Diagram E</span>The playbook</p>
+        <div class="playbook" id="playbook"></div>
+      </figure>
+
     </li>
     <li class="finding">
       <p class="finding__n" aria-hidden="true">3</p>
@@ -356,9 +533,41 @@
         <p>შიდა კონსოლიდაცია და გეოპოლიტიკა ერთი ამბავია. დასავლეთის წინააღმდეგ შემობრუნებამ ერთდროულად ორი რამ გააკეთა: ქვეყნის შიგნით ოპოზიციის, სამოქალაქო საზოგადოებისა და პროტესტის დელეგიტიმაცია მოახდინა, გარეთ კი დასავლურ ინსტიტუტებთან ქვეყნის კავშირები დაასუსტა.</p>
         <p>მმართველმა პარტიამ ეს სუვერენიტეტის დაცვად წარმოაჩინა. პრაქტიკაში კი ამან შეავიწროვა საქართველოს რეალური სუვერენული არჩევანი, ევროპული ინტეგრაცია, და გააფართოვა იმ ქვეყნის გავლენა, რომელსაც საქართველოს ტერიტორიის დაახლოებით 20% აქვს ოკუპირებული.</p>
       </div>
+<figure class="finding__fig finding__fig--full"><div class="trade" id="trade">
+          <div class="trade__side trade__side--gain">
+            <p class="label">What the regime gained</p>
+            <ul class="plain">
+              <li>Opposition, NGOs and protest lose legitimacy</li>
+              <li>Repression becomes easier to justify</li>
+              <li>Survival in power</li>
+            </ul>
+          </div>
+          <svg class="trade__beam" viewBox="0 0 400 120" aria-hidden="true">
+            <path class="trade__post" d="M200 26V104M170 104H230"/>
+            <g class="trade__arm"><path d="M40 26H360"/><path d="M40 26v16M360 26v16"/><rect x="18" y="42" width="44" height="14"/><rect x="330" y="42" width="60" height="30"/></g>
+          </svg>
+          <div class="trade__side trade__side--cost">
+            <p class="label">What the country paid</p>
+            <ul class="plain">
+              <li>EU integration suspended until 2028</li>
+              <li>Weaker links with Western institutions</li>
+              <li>More room for Russian influence</li>
+            </ul>
+          </div>
+        </div></figure>
+
     </li>
   </ol>
 
+<figure class="fig fig--wide" id="figGeorgia">
+    <p class="fig__title"><span class="label">Map</span>Georgia and its occupied territories</p>
+    <div class="map map--ge" id="mapGeorgia" role="img" aria-label="Map of Georgia. Abkhazia in the north-west and the Tskhinvali region, also called South Ossetia, in the north are hatched as Russian-occupied. Tbilisi is marked in the east."></div>
+    <ul class="legend">
+      <li><span class="lg lg--occ"></span>Russian-occupied, about 20% of Georgia’s territory</li>
+      <li><span class="lg lg--cap"></span>Tbilisi</li>
+    </ul>
+    <figcaption>Abkhazia and the Tskhinvali region / South Ossetia. Boundaries from Natural Earth, shown schematically.</figcaption>
+  </figure>
   <div class="split">
     <div>
       <p class="label">რა მოიგო რეჟიმმა</p>
@@ -468,7 +677,7 @@
     if (a) a.href = "mailto:" + rv(p[1]) + String.fromCharCode(64) + rv(p[0]);
 
     /* Dark / light switch (shared with the English page) */
-    var root = document.documentElement, btn = document.getElementById("themeToggle"), lab = document.getElementById("themeLabel");
+    var root = document.documentElement, btn = document.getElementById("themeToggleKa"), lab = document.getElementById("themeLabelKa");
     function isDark() {
       var t = root.getAttribute("data-theme");
       return t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -482,24 +691,12 @@
     });
     paint();
 
-    /* Reading progress and active chapter in the contents list */
-    var bar = document.getElementById("progress");
-    window.addEventListener("scroll", function () {
-      var h = document.documentElement.scrollHeight - innerHeight;
-      bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
-    }, { passive: true });
-    var dots = document.querySelectorAll(".dots a");
-    if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (en) {
-          if (!en.isIntersecting) return;
-          var id = en.target.getAttribute("data-section");
-          dots.forEach(function (d) { d.classList.toggle("is-active", d.getAttribute("data-dot") === id); });
-        });
-      }, { rootMargin: "-45% 0px -54% 0px" });
-      document.querySelectorAll("[data-section]").forEach(function (s) { io.observe(s); });
-    }
   })();
 </script>
+<script defer src="../data.js"></script>
+<script defer src="../assets/geo.js"></script>
+<script defer src="../vendor/d3.v7.min.js"></script>
+<script defer src="../vendor/topojson-client.v3.min.js"></script>
+<script defer src="../main.js"></script>
 </body>
 </html>
