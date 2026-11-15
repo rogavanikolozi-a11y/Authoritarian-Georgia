@@ -805,11 +805,11 @@
     if (!btn || !src) return;
     btn.addEventListener("click", function () {
       var text = src.textContent.trim();
-      function ok() { msg.textContent = "Copied"; setTimeout(function () { msg.textContent = ""; }, 2500); }
+      function ok() { msg.textContent = T("Copied"); setTimeout(function () { msg.textContent = ""; }, 2500); }
       function fallback() {
         var r = document.createRange(); r.selectNodeContents(src);
         var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-        try { document.execCommand("copy"); ok(); } catch (e) { msg.textContent = "Select the text and copy it"; }
+        try { document.execCommand("copy"); ok(); } catch (e) { msg.textContent = T("Select the text and copy it"); }
       }
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback);
       else fallback();

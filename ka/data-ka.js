@@ -33,6 +33,8 @@
     "Interview, {0}": "ინტერვიუ, {0}",
     "official line": "ოფიციალური ხაზი",
     "actual course": "რეალური კურსი",
+    "Copied": "დაკოპირდა",
+    "Select the text and copy it": "მონიშნეთ ტექსტი და დააკოპირეთ",
   };
 
   patch(D.timeline, [
