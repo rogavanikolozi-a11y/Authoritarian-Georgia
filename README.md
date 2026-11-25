@@ -2,8 +2,8 @@
 
 A visual summary of Nikoloz Rogava's MA thesis (University of Tartu, 2026), in English and Georgian.
 
-- English: https://rogavanikolozi-a11y.github.io/Authoritarian-Georgia/
-- Georgian: https://rogavanikolozi-a11y.github.io/Authoritarian-Georgia/ka/
+- English: https://authoritariangeorgia.com/
+- Georgian: https://authoritariangeorgia.com/ka/
 
 Plain HTML, CSS and JavaScript. No build step: edit a file, push to `main`, and GitHub Pages
 publishes it in a few minutes.
