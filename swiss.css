@@ -486,3 +486,7 @@ html:lang(ka) body *:not(svg, svg *) { text-transform: none !important; font-var
 /* five lenses on narrow screens: no top rule pressed against the heading */
 @media (max-width: 860px) { .lens { border-top: 0; padding-top: 2px; } .lens + .lens { margin-top: 8px; } }
 .meter__lab > * { min-width: 0; overflow-wrap: anywhere; }
+/* footer labels stay red on the black block; Latin pole ends stay uppercase on the Georgian page */
+.foot .label { color: var(--s-red) !important; }
+html:lang(ka) .pole__end { text-transform: uppercase !important; }
+.foot__grid { margin-top: 0; }
