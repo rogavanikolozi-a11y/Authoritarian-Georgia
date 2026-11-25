@@ -22,7 +22,7 @@ publishes it in a few minutes.
 | `data/corpus.csv` | The 386 statements analysed (ID, speaker, date, Radio Tavisupleba link), from Appendix 1 of the thesis |
 | `sitemap.xml` | List of pages for Google |
 | `googlee7d4478635277d5d.html` | Google Search Console verification. **Do not delete** |
-| `images/` | `portrait.jpg`, `photo-2.jpg`, `preview-swiss.png` (link preview image) |
+| `images/` | `portrait.jpg`, `preview-swiss.png` (link preview image) |
 | `fonts/` | Newsreader, IBM Plex, Noto Serif Georgian, BPG Typewriter A (Georgian page) |
 | `assets/` | `thesis.pdf`, `geo.js` (map shapes, Natural Earth) |
 | `vendor/` | D3 v7 and topojson-client |
